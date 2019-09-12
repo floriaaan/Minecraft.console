@@ -15,8 +15,8 @@ public class Inventory {
     }
 
     void clearSlot(){
-        items[currentSlot].ItemType = "";
-        items[currentSlot].Amount = 0;
+        items[currentSlot].setItemType("");
+        items[currentSlot].setAmount(0);
         items[currentSlot].isBlock = false;
     }
 }

@@ -1,21 +1,37 @@
 package com.tetra.minecraft_console;
 
 public class Item {
+    private String ItemType = "";
+    private static int Amount = 0;
+    boolean isBlock = false;
 
     public Item(){
-        ItemType = "Dirt";
-        Amount = 64;
+        setItemType("Dirt");
+        setAmount(64);
         isBlock = true;
     }
 
-    String ItemType;
-    static int Amount;
-    boolean isBlock;
+
 
 
 
     static boolean IsEmpty() {
-        return (Amount == 0);
+        return (getAmount() == 0);
     }
 
+    public static int getAmount() {
+        return Amount;
+    }
+
+    public static void setAmount(int amount) {
+        Amount = amount;
+    }
+
+    public String getItemType() {
+        return ItemType;
+    }
+
+    public void setItemType(String itemType) {
+        ItemType = itemType;
+    }
 }
