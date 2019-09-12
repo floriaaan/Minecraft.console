@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="" />
+    <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageViewManager">
+    <option name="myFlattenPackages" value="true" />
+    <option name="myElementSize" value="293" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1QiCW7ughMDB1QqofeYbxDRzZUR" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -28,6 +41,26 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tetra.minecraft_console.Main" />
+      <module name="Minecraft.console" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tetra.minecraft_console.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -40,5 +73,21 @@
       <updated>1568244058953</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Minecraft_console$Main.ic" NAME="Main Coverage Results" MODIFIED="1568278809439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.tetra.minecraft_console.*</FILTER>
+    </SUITE>
   </component>
 </project>

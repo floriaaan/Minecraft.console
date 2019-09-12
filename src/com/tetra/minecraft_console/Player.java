@@ -1,7 +1,12 @@
 package com.tetra.minecraft_console;
 
 public class Player {
-    String Name = "Steve";
+    String Name;
+
+    public Player(String playerName) {
+        Name = playerName;
+    }
+
 	Inventory inv = new Inventory();
 	int Health = 20;
 	int Exp = 0;
@@ -12,7 +17,7 @@ public class Player {
         System.out.println("You mined a " + inv.items[inv.currentSlot].ItemType);
         ++inv.items[inv.currentSlot].Amount;
         System.out.println("You now have " + inv.items[inv.currentSlot].Amount);
-        //this.inv.changeSlot();
+        this.inv.changeSlot();
     }
 
     void PlaceABlock() {

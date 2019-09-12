@@ -12,6 +12,11 @@ public class Inventory {
         if(!items[currentSlot].IsEmpty()) {
             ++currentSlot;
         }
+    }
 
+    void clearSlot(){
+        items[currentSlot].ItemType = "";
+        items[currentSlot].Amount = 0;
+        items[currentSlot].isBlock = false;
     }
 }
