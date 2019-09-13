@@ -29,6 +29,6 @@ public class Player {
     void Describe(){
         System.out.println(Name + " has " + Health + " health points.");
         System.out.println(Name + " has " + Exp + " exp. points.");
-        System.out.println(Name + " has a " + inv.items[inv.currentSlot].getItemType() + " block in his hands.");
+        System.out.println(Name + " has " + inv.items[inv.currentSlot].getAmount() + " block of "+ inv.items[inv.currentSlot].getItemType() + " in his hand.");
     }
 }
