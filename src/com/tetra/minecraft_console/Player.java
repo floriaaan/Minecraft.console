@@ -10,6 +10,7 @@ public class Player {
 	Inventory inv = new Inventory();
 	int Health = 20;
 	int Exp = 0;
+	double Strenght = Exp * 0.5 + 5;
 
 
 
@@ -18,12 +19,15 @@ public class Player {
         inv.items[inv.currentSlot].setAmount(inv.items[inv.currentSlot].getAmount() + 1);
         System.out.println("You now have " + inv.items[inv.currentSlot].getAmount());
         this.inv.changeSlot();
+        this.Exp += 5;
     }
 
     void PlaceABlock() {
         System.out.println("You placed a " + inv.items[inv.currentSlot].getItemType());
+        inv.items[inv.currentSlot].setAmount(inv.items[inv.currentSlot].getAmount() - 1);
         this.inv.changeSlot();
-        System.out.println("You now have " + inv.items[inv.currentSlot].getAmount());
+        System.out.println("You now have " + inv.items[inv.currentSlot - 1].getAmount());
+        this.Exp += 1;
     }
 
     void Describe(){

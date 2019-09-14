@@ -12,13 +12,14 @@ public class Main {
 	String PlayerName = userName.nextLine();
 	System.out.println("Oh! Hello " + PlayerName);
 
+	Environnement e = new Environnement();
 	Player Steve = new Player(PlayerName);
-
-	WaitForInstructions(Steve);
+    e.tellWeather();
+	WaitForInstructions(Steve, e);
 
     }
 
-    static void WaitForInstructions(Player P){
+    static void WaitForInstructions(Player P, Environnement E){
         String Instruction = null;
         while(Instruction != "Exit") {
             System.out.println("What do you want to do? You can make /help to have a list of what you can do.");
@@ -31,9 +32,24 @@ public class Main {
                     break;
                 case "Pick a block":
                     P.PickABlock();
+                    if (Evenement.MobApparition(E)) {
+                        Monster mob = new Monster(E);
+                        //while ???
+                        while (mob.mobHealth >= 0 || P.Health >= 0 ) {
+                            mob.hitThePlayer(P);
+                            mob.hitByPlayer(P);
+                        }
+                    }
                     break;
                 case "Place a block":
                     P.PlaceABlock();
+                    if (Evenement.MobApparition(E)) {
+                        Monster mob = new Monster(E);
+                        while (P.Health >= 0 || mob.mobHealth >= 0) {
+                            mob.hitThePlayer(P);
+                            mob.hitByPlayer(P);
+                        }
+                    }
                     break;
                 case "/help":
                     System.out.println("You can:");
