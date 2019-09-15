@@ -35,4 +35,13 @@ public class Player {
         System.out.println(Name + " has " + Exp + " exp. points.");
         System.out.println(Name + " has " + inv.items[inv.currentSlot].getAmount() + " block of "+ inv.items[inv.currentSlot].getItemType() + " in his hand.");
     }
+
+    void Regen(){
+        this.Health += 3;
+        System.out.println("You slowly regen yourself. You have " + this.Health + " health points.");
+    }
+
+    void TellMobEncountered() {
+        System.out.println("hello");
+    }
 }

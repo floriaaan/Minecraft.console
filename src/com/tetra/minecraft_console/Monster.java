@@ -57,8 +57,7 @@ public class Monster {
             P.Exp += 20;
             P.Strenght = P.Exp * 0.5 + 5;
             System.out.println("You earned 20 exp points. You now have " + P.Exp + " exp points.");
-            P.Health += 1;
-            System.out.println("You slowly regen yourself. You have " + P.Health + " health points.");
+
 
         }
     }

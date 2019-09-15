@@ -39,6 +39,7 @@ public class Main {
                             mob.hitThePlayer(P);
                             mob.hitByPlayer(P);
                         }
+                        P.Regen();
                     }
                     break;
                 case "Place a block":
@@ -57,6 +58,9 @@ public class Main {
                     System.out.println("\t - Pick a block");
                     System.out.println("\t - Place a block");
                     System.out.println("\t - Exit");
+                    break;
+                case "Mob Bestiary":
+                    P.TellMobEncountered();
                     break;
                 case "Exit":
                     System.out.println("Good Bye ;)");
