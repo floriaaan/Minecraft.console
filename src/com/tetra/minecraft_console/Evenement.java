@@ -13,4 +13,13 @@ public class Evenement {
         return false;
     }
 
+    public static boolean ChosenOne(){
+        Random r = new Random();
+        int random = r.nextInt(100);
+        if (random > 90) {
+            return true;
+        }
+        return false;
+    }
+
 }

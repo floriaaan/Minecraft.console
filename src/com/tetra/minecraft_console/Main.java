@@ -1,28 +1,29 @@
 package com.tetra.minecraft_console;
 
+
 import java.util.Scanner;
 
 public class Main {
+    private static Languages lang = new Languages();
 
     public static void main(String[] args) {
-	System.out.println("Welcome to Minecraft.console !");
+        System.out.println(lang.Messages.getString("welcome"));
 
-	System.out.println("What is your name ?");
-	Scanner userName = new Scanner(System.in);
-	String PlayerName = userName.nextLine();
-	System.out.println("Oh! Hello " + PlayerName);
+        // Setting Up the Game
+        String PlayerName = AskForPlayerName();
+        Environnement e = new Environnement();
+        Player Steve = new Player(PlayerName);
+        e.tellWeather();
 
-	Environnement e = new Environnement();
-	Player Steve = new Player(PlayerName);
-    e.tellWeather();
-	WaitForInstructions(Steve, e);
+        // Instructions
+        WaitForInstructions(Steve, e);
 
     }
 
-    static void WaitForInstructions(Player P, Environnement E){
+    static void WaitForInstructions(Player P, Environnement E) {
         String Instruction = null;
-        while(Instruction != "Exit") {
-            System.out.println("What do you want to do? You can make /help to have a list of what you can do.");
+        while (Instruction != "Exit") {
+            System.out.println(lang.Messages.getString("wait_for_instructions"));
 
             Scanner I = new Scanner(System.in);
             Instruction = I.nextLine();
@@ -35,7 +36,7 @@ public class Main {
                     if (Evenement.MobApparition(E)) {
                         Monster mob = new Monster(E);
                         //while ???
-                        while (mob.mobHealth >= 0 || P.Health >= 0 ) {
+                        while (mob.mobHealth >= 0 || P.Health >= 0) {
                             mob.hitThePlayer(P);
                             mob.hitByPlayer(P);
                         }
@@ -53,19 +54,28 @@ public class Main {
                     }
                     break;
                 case "/help":
-                    System.out.println("You can:");
-                    System.out.println("\t - Describe");
-                    System.out.println("\t - Pick a block");
-                    System.out.println("\t - Place a block");
-                    System.out.println("\t - Exit");
+                    System.out.println(lang.Messages.getString("help_0"));
+                    System.out.println("\t - " + lang.Messages.getString("help_1"));
+                    System.out.println("\t - " + lang.Messages.getString("help_2"));
+                    System.out.println("\t - " + lang.Messages.getString("help_3"));
+                    System.out.println("\t - " + lang.Messages.getString("help_4"));
                     break;
                 case "Mob Bestiary":
                     P.TellMobEncountered();
                     break;
                 case "Exit":
-                    System.out.println("Good Bye ;)");
+                    System.out.println(lang.Messages.getString("bye"));
                     Instruction = "Exit";
             }
         }
+    }
+
+
+    static String AskForPlayerName() {
+        System.out.println(lang.Messages.getString("ask_for_playername"));
+        Scanner userName = new Scanner(System.in);
+        String PlayerName = userName.nextLine();
+        System.out.println(lang.Messages.getString("playername_set") + PlayerName);
+        return PlayerName;
     }
 }

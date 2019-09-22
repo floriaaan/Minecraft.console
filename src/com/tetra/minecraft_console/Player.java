@@ -11,6 +11,7 @@ public class Player {
 	int Health = 20;
 	int Exp = 0;
 	double Strenght = Exp * 0.5 + 5;
+	boolean ChosenOne = Evenement.ChosenOne();
 
 
 
