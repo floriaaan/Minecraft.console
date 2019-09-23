@@ -4,7 +4,7 @@ package com.tetra.minecraft_console;
 import java.util.Scanner;
 
 public class Main {
-    private static Languages lang = new Languages();
+    public static Languages lang = new Languages();
 
     public static void main(String[] args) {
         System.out.println(lang.Messages.getString("welcome"));
