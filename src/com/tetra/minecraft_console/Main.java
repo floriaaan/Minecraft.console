@@ -9,6 +9,10 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(lang.Messages.getString("welcome"));
 
+
+        //Preparing for more languages
+        //System.out.println("Locale::" + lang.currentLocale);
+
         // Setting Up the Game
         String PlayerName = AskForPlayerName();
         Environnement e = new Environnement();

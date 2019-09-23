@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,15 +15,50 @@
     <option name="myFlattenPackages" value="true" />
     <option name="myElementSize" value="293" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Florian &lt;florian.leroux3@laposte.net&gt;" />
+      </list>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="languages" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1QiCW7ughMDB1QqofeYbxDRzZUR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Docs\DEV\Minecraft.console\src\com\tetra\minecraft_console\langs" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -58,6 +89,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -72,18 +104,108 @@
       <option name="presentableId" value="Default" />
       <updated>1568244058953</updated>
     </task>
+    <task id="LOCAL-00001" summary="Implementation of Instructions in game.">
+      <created>1568280742666</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568280742667</updated>
+    </task>
+    <task id="LOCAL-00002" summary="setItemType(), setAmount(), getItemType(), getAmount()">
+      <created>1568301883671</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568301883671</updated>
+    </task>
+    <task id="LOCAL-00003" summary="New init of Inventory class.&#10;Debug of Describe(), PickABlock(), PlaceABlock()">
+      <created>1568371811010</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568371811010</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adding Evenements and Environnement&#10;Mobs are in this commit">
+      <created>1568501385867</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568501385867</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Introducing a Regen() method.">
+      <created>1568554426987</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1568554426987</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Introduced Internationalizing">
+      <created>1569172374959</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1569172374959</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added more translations in french.">
+      <created>1569230145094</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569230145094</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Languages introduced">
+      <created>1569246229401</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569246229401</updated>
+    </task>
+    <task id="LOCAL-00009" summary="-Added DefaultLanguage&#10;-Fixed some translations">
+      <created>1569273880112</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1569273880112</updated>
+    </task>
+    <task id="LOCAL-00010" summary="-Added DefaultLanguage&#10;-Fixed some translations">
+      <created>1569273948292</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1569273948292</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Implementation of Instructions in game." />
+    <MESSAGE value="setItemType(), setAmount(), getItemType(), getAmount()" />
+    <MESSAGE value="Adding Evenements and Environnement&#10;Mobs are in this commit" />
+    <MESSAGE value="Introducing a Regen() method." />
+    <MESSAGE value="Introduced Internationalizing" />
+    <MESSAGE value="Added more translations in french." />
+    <MESSAGE value="Languages introduced" />
+    <MESSAGE value="New init of Inventory class.&#10;Debug of Describe(), PickABlock(), PlaceABlock()" />
+    <MESSAGE value="-Added DefaultLanguage&#10;-Fixed some translations" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Added DefaultLanguage&#10;-Fixed some translations" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Minecraft_console$Main.ic" NAME="Main Coverage Results" MODIFIED="1568278809439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
