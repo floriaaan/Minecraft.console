@@ -75,7 +75,11 @@ public class Main {
         System.out.println(lang.Messages.getString("ask_for_playername"));
         Scanner userName = new Scanner(System.in);
         String PlayerName = userName.nextLine();
-        System.out.println(lang.Messages.getString("playername_set") + PlayerName);
+
+        Object[] playername_set_args = {PlayerName, };
+        String playername_set = lang.getMessage("playername_set", playername_set_args);
+        System.out.println(playername_set);
+
         return PlayerName;
     }
 }

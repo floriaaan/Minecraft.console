@@ -2,6 +2,8 @@ package com.tetra.minecraft_console;
 
 import java.util.Random;
 
+import static com.tetra.minecraft_console.Main.lang;
+
 public class Environnement {
     boolean isDay;
     boolean isSunny;
@@ -25,14 +27,14 @@ public class Environnement {
     void tellWeather(){
 
         if(isSunny) {
-            System.out.println("The weather is clear today!");
+            System.out.println(lang.Messages.getString("is_sunny"));
         } else {
-            System.out.println("The weather is pretty rainy today, it can be slippery.");
+            System.out.println(lang.Messages.getString("is_rainy"));
         }
         if (isDay){
-            System.out.println("Have a great day!");
+            System.out.println(lang.Messages.getString("is_day"));
         } else {
-            System.out.println("Night is coming fast, be extremely careful!");
+            System.out.println(lang.Messages.getString("is_night"));
         }
     }
 }

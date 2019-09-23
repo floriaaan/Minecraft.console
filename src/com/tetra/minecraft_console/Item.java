@@ -1,12 +1,14 @@
 package com.tetra.minecraft_console;
 
+import static com.tetra.minecraft_console.Main.lang;
+
 public class Item {
     private String ItemType = "";
     private static int Amount = 0;
     boolean isBlock = false;
 
     public Item(){
-        setItemType("Dirt");
+        setItemType(lang.Messages.getString("dirt"));
         setAmount(64);
         isBlock = true;
     }

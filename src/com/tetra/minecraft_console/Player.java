@@ -20,18 +20,32 @@ public class Player {
 
 
     void PickABlock() {
-        System.out.println(lang.Messages.getString("pick_a_block") + inv.items[inv.currentSlot].getItemType());
+        Object[] pick_a_block_args = {inv.items[inv.currentSlot].getItemType()};
+        String pick_a_block = lang.getMessage("pick_a_block", pick_a_block_args);
+        System.out.println(pick_a_block);
+
         inv.items[inv.currentSlot].setAmount(inv.items[inv.currentSlot].getAmount() + 1);
-        System.out.println(lang.Messages.getString("now_have") + inv.items[inv.currentSlot].getAmount());
+
+        Object[] now_have_args = {inv.items[inv.currentSlot].getAmount()};
+        String now_have = lang.getMessage("now_have", now_have_args);
+        System.out.println(now_have);
+
         this.inv.changeSlot();
         this.Exp += 5;
     }
 
     void PlaceABlock() {
-        System.out.println(lang.Messages.getString("place_a_block") + inv.items[inv.currentSlot].getItemType());
+        Object[] place_a_block_args = {inv.items[inv.currentSlot].getItemType()};
+        String place_a_block = lang.getMessage("place_a_block", place_a_block_args);
+        System.out.println(place_a_block);
+
         inv.items[inv.currentSlot].setAmount(inv.items[inv.currentSlot].getAmount() - 1);
         this.inv.changeSlot();
-        System.out.println(lang.Messages.getString("now_have") + inv.items[inv.currentSlot - 1].getAmount());
+
+        Object[] now_have_args = {inv.items[inv.currentSlot - 1].getAmount()};
+        String now_have = lang.getMessage("now_have", now_have_args);
+        System.out.println(now_have);
+
         this.Exp += 1;
     }
 
