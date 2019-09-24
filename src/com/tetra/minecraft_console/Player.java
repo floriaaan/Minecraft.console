@@ -16,6 +16,7 @@ public class Player {
 	int Exp = 0;
 	double Strenght = Exp * 0.5 + 5;
 	boolean ChosenOne = Evenement.ChosenOne();
+	Tool Hand = new Tool("Hand");
 
 
 
@@ -30,7 +31,7 @@ public class Player {
         String now_have = lang.getMessage("now_have", now_have_args);
         System.out.println(now_have);
 
-        this.inv.changeSlot();
+        this.inv.setCurrentSlotToFirstEmpty();
         this.Exp += 5;
     }
 
@@ -40,7 +41,7 @@ public class Player {
         System.out.println(place_a_block);
 
         inv.items[inv.currentSlot].setAmount(inv.items[inv.currentSlot].getAmount() - 1);
-        this.inv.changeSlot();
+        this.inv.setCurrentSlotToFirstEmpty();
 
         Object[] now_have_args = {inv.items[inv.currentSlot - 1].getAmount()};
         String now_have = lang.getMessage("now_have", now_have_args);
@@ -72,5 +73,32 @@ public class Player {
 
     void TellMobEncountered() {
         System.out.println("hello");
+    }
+
+    void CutTrees(Tool tool){
+        inv.setCurrentSlotToFirstEmpty();
+        int WoodFortuneAmount = 64; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
+        inv.items[inv.currentSlot] = new Item("wood_log", WoodFortuneAmount, true);
+    }
+
+    void Mine(Tool tool){
+        inv.setCurrentSlotToFirstEmpty();
+        int CobbleFortuneAmount = 64; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
+        inv.items[inv.currentSlot] = new Item("cobblestone", CobbleFortuneAmount, true);
+        inv.setCurrentSlotToFirstEmpty();
+        int DirtFortuneAmount = 32; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
+        inv.items[inv.currentSlot] = new Item("dirt", DirtFortuneAmount, true);
+        inv.setCurrentSlotToFirstEmpty();
+        int IronOreFortuneAmount = 8; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
+        inv.items[inv.currentSlot] = new Item("iron_ore", IronOreFortuneAmount, true);
+        inv.setCurrentSlotToFirstEmpty();
+        int GoldOreFortuneAmount = 4; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
+        inv.items[inv.currentSlot] = new Item("gold_ore", CobbleFortuneAmount, true);
+        inv.setCurrentSlotToFirstEmpty();
+        int DiamondFortuneAmount = 2; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
+        inv.items[inv.currentSlot] = new Item("diamond", DiamondFortuneAmount, true);
+        inv.setCurrentSlotToFirstEmpty();
+        int EmeraldFortuneAmount = 1; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
+        inv.items[inv.currentSlot] = new Item("emerald", EmeraldFortuneAmount, true);
     }
 }

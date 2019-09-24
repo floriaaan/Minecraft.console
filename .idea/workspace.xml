@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Tool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_en_US.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_fr_FR.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_fr_FR.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +48,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1QiCW7ughMDB1QqofeYbxDRzZUR" />
@@ -52,6 +61,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -183,6 +193,30 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="range">
+                    <value>
+                      <list>
+                        <option value="HEAD..Minecraft.console/master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>

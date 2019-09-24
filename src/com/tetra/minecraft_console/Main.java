@@ -51,10 +51,12 @@ public class Main {
                     P.PlaceABlock();
                     if (Evenement.MobApparition(E)) {
                         Monster mob = new Monster(E);
-                        while (P.Health >= 0 || mob.mobHealth >= 0) {
+                        while (mob.mobHealth >= 0) {
                             mob.hitThePlayer(P);
                             mob.hitByPlayer(P);
+
                         }
+                        P.Regen();
                     }
                     break;
                 case "/help":

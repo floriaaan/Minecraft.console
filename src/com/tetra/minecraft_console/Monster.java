@@ -30,7 +30,7 @@ public class Monster {
 
 
     void hitThePlayer(Player P){
-        if(P.Health > this.mobStrenght) {
+        if(P.Health >= this.mobStrenght) {
             P.Health -= mobStrenght;
 
             Object[] hit_the_player_args = {mobType, mobStrenght};

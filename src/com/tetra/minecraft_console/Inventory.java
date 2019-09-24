@@ -5,7 +5,7 @@ public class Inventory {
     int currentSlot = 0;
     public Inventory(){
         for(int k = 0; k < 36; k++){
-            items[k] = new Item();
+            items[k] = new Item(null, 0, false);
         }
 
     }
@@ -15,15 +15,14 @@ public class Inventory {
         return items[Slot].IsEmpty();
     }
 
-    void changeSlot(){
-        if(!items[currentSlot].IsEmpty()) {
-            ++currentSlot;
-        }
-    }
-
     void clearSlot(){
         items[currentSlot].setItemType("");
         items[currentSlot].setAmount(0);
         items[currentSlot].isBlock = false;
+    }
+    void setCurrentSlotToFirstEmpty(){
+        while(!items[currentSlot].IsEmpty()) {
+            ++currentSlot;
+        }
     }
 }

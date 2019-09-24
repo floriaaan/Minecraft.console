@@ -4,28 +4,28 @@ import static com.tetra.minecraft_console.Main.lang;
 
 public class Item {
     private String ItemType = "";
-    private static int Amount = 0;
-    boolean isBlock = false;
+    int Amount = 0;
+    boolean isBlock;
 
-    public Item(){
-        setItemType(lang.Messages.getString("dirt"));
-        setAmount(64);
-        isBlock = true;
+    public Item(String item_type, int amount, boolean is_block){
+        setItemType(lang.Messages.getString(item_type));
+        setAmount(amount);
+        isBlock = is_block;
     }
 
 
 
 
 
-    static boolean IsEmpty() {
+    boolean IsEmpty() {
         return (getAmount() == 0);
     }
 
-    public static int getAmount() {
+    public int getAmount() {
         return Amount;
     }
 
-    public static void setAmount(int amount) {
+    public void setAmount(int amount) {
         Amount = amount;
     }
 
