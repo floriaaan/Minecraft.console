@@ -37,27 +37,27 @@ public class Main {
                     break;
                 case "Pick a block":
                     P.PickABlock();
-                    if (Evenement.MobApparition(E)) {
-                        Monster mob = new Monster(E);
-                        //while ???
-                        while (mob.mobHealth >= 0 || P.Health >= 0) {
-                            mob.hitThePlayer(P);
-                            mob.hitByPlayer(P);
-                        }
-                        P.Regen();
-                    }
+//                    if (Evenement.MobApparition(E)) {
+//                        Monster mob = new Monster(E);
+//                        //while ???
+//                        while (mob.mobHealth >= 0 || P.Health >= 0) {
+//                            mob.hitThePlayer(P);
+//                            mob.hitByPlayer(P);
+//                        }
+//                        P.Regen();
+//                    }
                     break;
                 case "Place a block":
                     P.PlaceABlock();
-                    if (Evenement.MobApparition(E)) {
-                        Monster mob = new Monster(E);
-                        while (mob.mobHealth >= 0) {
-                            mob.hitThePlayer(P);
-                            mob.hitByPlayer(P);
-
-                        }
-                        P.Regen();
-                    }
+//                    if (Evenement.MobApparition(E)) {
+//                        Monster mob = new Monster(E);
+//                        while (mob.mobHealth >= 0) {
+//                            mob.hitThePlayer(P);
+//                            mob.hitByPlayer(P);
+//
+//                        }
+//                        P.Regen();
+//                    }
                     break;
                 case "/help":
                     System.out.println(lang.Messages.getString("help_0"));
