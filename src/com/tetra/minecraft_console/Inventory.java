@@ -14,22 +14,22 @@ public class Inventory {
 
 
     boolean IsEmpty(int Slot) {
-        return items[Slot].IsEmpty();
+        return items[Slot].isEmpty();
     }
 
-    void clearSlot(){
-        items[currentSlot].setItemType("nothing");
-        items[currentSlot].setAmount(0);
-        items[currentSlot].isBlock = false;
+    void clearSlot(int Slot){
+        items[Slot].setItemType("nothing");
+        items[Slot].setAmount(0);
+        items[Slot].isBlock = false;
     }
     void setCurrentSlotToFirstEmpty(){
-        while(!items[currentSlot].IsEmpty()) {
+        while(!items[currentSlot].isEmpty()) {
             ++currentSlot;
         }
     }
 
     boolean setCurrentSlotToFirstOccupied(){
-        while(items[currentSlot].IsEmpty() && currentSlot <= 34){
+        while(items[currentSlot].isEmpty() && currentSlot <= 34){
             ++currentSlot;
             //System.out.println("SLOT CHANGED :: " + currentSlot);
         }
@@ -40,6 +40,16 @@ public class Inventory {
         }
         return true;
     }
+
+    int FirstOccurrence(Item item){
+        for(int k = 0; k < 36; ++k){
+            if(items[k].isEqual(item)) {
+                return k;
+            }
+        }
+        return -1;
+    }
+
     void setCurrentSlotToSameItemType(Item item){
         int k = 0;
         while(!item.getItemType().equals(items[currentSlot].getItemType()) || (k < (currentSlot - k))){

@@ -8,13 +8,14 @@ import static com.tetra.minecraft_console.Main.lang;
 public class Monster {
     String[] mobList = {lang.Messages.getString("zombie"),
                 lang.Messages.getString("skeleton"),
-                lang.Messages.getString("spider")};
+                lang.Messages.getString("spider"),
+                lang.Messages.getString("creeper")};
     int mobHealth = 10;
     double mobStrenght = 3;
     String mobType = new String();
 
     Random r = new Random();
-    int random = r.nextInt(3);
+    int random = r.nextInt(4);
 
 
 

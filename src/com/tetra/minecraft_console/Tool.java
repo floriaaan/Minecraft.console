@@ -25,4 +25,26 @@ public class Tool {
         }
     }
 
+    void copy(String item_type, int amount, boolean is_block){
+        item.setItemType(item_type);
+        item.setAmount(amount);
+        item.isBlock = is_block;
+    }
+
+    void updateDurability(){
+        if(this.item.getItemType().startsWith("iron")){
+            durability = 16;
+        } else if (this.item.getItemType().startsWith("gold")){
+            durability = 24;
+        } else if (this.item.getItemType().startsWith("diamond")) {
+            durability = 64;
+        } else if (this.item.getItemType().startsWith("wooden")) {
+            durability = 4;
+        } else if (this.item.getItemType().startsWith("stone")) {
+            durability = 8;
+        } else {
+            durability = -1;
+        }
+    }
+
 }

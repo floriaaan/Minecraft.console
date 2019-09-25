@@ -8,7 +8,7 @@ public class Item {
     boolean isBlock;
 
     public Item(String item_type, int amount, boolean is_block){
-        setItemType(lang.Messages.getString(item_type));
+        setItemType(item_type);
         setAmount(amount);
         isBlock = is_block;
     }
@@ -17,10 +17,15 @@ public class Item {
 
 
 
-    boolean IsEmpty() {
+    boolean isEmpty() {
         return (getAmount() == 0);
     }
-    boolean IsFull() { return (getAmount() == 64); }
+    boolean isFull() { return (getAmount() == 64); }
+    boolean isEqual(Item item) {
+        return (this.getItemType().equals(item.getItemType())
+                && (this.getAmount() == item.getAmount())
+                && (this.isBlock == item.isBlock));
+    }
 
     public int getAmount() {
         return Amount;
@@ -35,6 +40,8 @@ public class Item {
     }
 
     public void setItemType(String itemType) {
-        ItemType = itemType;
+        ItemType = lang.Messages.getString(itemType);
     }
+
+
 }

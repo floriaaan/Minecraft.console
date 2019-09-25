@@ -75,10 +75,10 @@ public class Main {
                     System.out.println(lang.Messages.getString("bye"));
                     Instruction = "Exit";
                 case "Mine":
-                    P.Mine(P.Hand);
+                    P.Mine(P.FavoriteTool);
                     break;
                 case "Cut some trees":
-                    P.CutTrees(P.Hand);
+                    P.CutTrees(P.FavoriteTool);
 
                     break;
             }
