@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Minecraft.console:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Monster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Tool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_en_US.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_fr_FR.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_fr_FR.properties" afterDir="false" />
@@ -62,6 +67,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -197,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569358255837</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Debugged Tools, Items, Inventory&#10;Preparing for &quot;bounds&quot; in Place and Pick">
+      <created>1569409809035</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1569409809035</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -253,7 +268,8 @@
     <MESSAGE value="New init of Inventory class.&#10;Debug of Describe(), PickABlock(), PlaceABlock()" />
     <MESSAGE value="-Added DefaultLanguage&#10;-Fixed some translations" />
     <MESSAGE value="Added Mine and CutTrees methods.&#10;Included Tool class&#10;Changed how Items work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Mine and CutTrees methods.&#10;Included Tool class&#10;Changed how Items work" />
+    <MESSAGE value="Debugged Tools, Items, Inventory&#10;Preparing for &quot;bounds&quot; in Place and Pick" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugged Tools, Items, Inventory&#10;Preparing for &quot;bounds&quot; in Place and Pick" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Minecraft_console$Main.ic" NAME="Main Coverage Results" MODIFIED="1568278809439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

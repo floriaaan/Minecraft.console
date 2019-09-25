@@ -107,23 +107,24 @@ public class Player {
     }
 
     void Mine(Tool tool){
+        //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTMENTS !!!
         inv.setCurrentSlotToFirstEmpty();
-        int CobbleFortuneAmount = 64; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
+        int CobbleFortuneAmount = 64;
         inv.items[inv.currentSlot] = new Item("cobblestone", CobbleFortuneAmount, true);
         inv.setCurrentSlotToFirstEmpty();
-        int DirtFortuneAmount = 32; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
+        int DirtFortuneAmount = 32;
         inv.items[inv.currentSlot] = new Item("dirt", DirtFortuneAmount, true);
         inv.setCurrentSlotToFirstEmpty();
-        int IronOreFortuneAmount = 8; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
+        int IronOreFortuneAmount = 8;
         inv.items[inv.currentSlot] = new Item("iron_ore", IronOreFortuneAmount, true);
         inv.setCurrentSlotToFirstEmpty();
-        int GoldOreFortuneAmount = 4; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
-        inv.items[inv.currentSlot] = new Item("gold_ore", CobbleFortuneAmount, true);
+        int GoldOreFortuneAmount = 4;
+        inv.items[inv.currentSlot] = new Item("gold_ore", GoldOreFortuneAmount, true);
         inv.setCurrentSlotToFirstEmpty();
-        int DiamondFortuneAmount = 2; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
-        inv.items[inv.currentSlot] = new Item("diamond", DiamondFortuneAmount, true);
+        int DiamondFortuneAmount = 2;
+        inv.items[inv.currentSlot] = new Item("diamond", DiamondFortuneAmount, false);
         inv.setCurrentSlotToFirstEmpty();
-        int EmeraldFortuneAmount = 1; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
-        inv.items[inv.currentSlot] = new Item("emerald", EmeraldFortuneAmount, true);
+        int EmeraldFortuneAmount = 1;
+        inv.items[inv.currentSlot] = new Item("emerald", EmeraldFortuneAmount, false);
     }
 }

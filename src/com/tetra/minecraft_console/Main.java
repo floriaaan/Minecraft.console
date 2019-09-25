@@ -65,6 +65,8 @@ public class Main {
                     System.out.println("\t - " + lang.Messages.getString("help_2"));
                     System.out.println("\t - " + lang.Messages.getString("help_3"));
                     System.out.println("\t - " + lang.Messages.getString("help_4"));
+                    System.out.println("\t - " + lang.Messages.getString("help_5"));
+                    System.out.println("\t - " + lang.Messages.getString("help_exit"));
                     break;
                 case "Mob Bestiary":
                     P.TellMobEncountered();
@@ -72,6 +74,13 @@ public class Main {
                 case "Exit":
                     System.out.println(lang.Messages.getString("bye"));
                     Instruction = "Exit";
+                case "Mine":
+                    P.Mine(P.Hand);
+                    break;
+                case "Cut some trees":
+                    P.CutTrees(P.Hand);
+
+                    break;
             }
         }
     }

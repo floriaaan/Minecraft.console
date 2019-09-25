@@ -18,7 +18,7 @@ public class Inventory {
     }
 
     void clearSlot(){
-        items[currentSlot].setItemType("");
+        items[currentSlot].setItemType("nothing");
         items[currentSlot].setAmount(0);
         items[currentSlot].isBlock = false;
     }
@@ -39,6 +39,19 @@ public class Inventory {
             return false;
         }
         return true;
+    }
+    void setCurrentSlotToSameItemType(Item item){
+        int k = 0;
+        while(!item.getItemType().equals(items[currentSlot].getItemType()) || (k < (currentSlot - k))){
+            ++currentSlot;
+            ++k;
+        }
+    }
+
+    void addAmount(Item item, int addingAmount){
+        this.setCurrentSlotToSameItemType(item);
+
+
     }
 
 

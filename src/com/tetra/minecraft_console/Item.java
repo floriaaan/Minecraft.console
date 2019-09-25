@@ -20,6 +20,7 @@ public class Item {
     boolean IsEmpty() {
         return (getAmount() == 0);
     }
+    boolean IsFull() { return (getAmount() == 64); }
 
     public int getAmount() {
         return Amount;
