@@ -3,6 +3,8 @@ package com.tetra.minecraft_console;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
+import static com.tetra.minecraft_console.Main.lang;
+
 public class Sys {
 
     static void printProgress(long startTime, long total, long current) {
@@ -25,7 +27,7 @@ public class Sys {
                 .append(String.join("", Collections.nCopies(100 - percent, " ")))
                 .append(']')
                 .append(String.join("", Collections.nCopies(current == 0 ? (int) (Math.log10(total)) : (int) (Math.log10(total)) - (int) (Math.log10(current)), " ")))
-                .append(String.format(" ETA: %s", etaHms));
+                .append(String.format(" " + lang.Messages.getString("ETA"), etaHms));
 
         System.out.print(string);
     }
