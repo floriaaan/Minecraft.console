@@ -13,7 +13,7 @@ public class Player {
 
 	Inventory inv = new Inventory();
 	int Health = 20;
-	int Exp = 0;
+	double Exp = 0;
 	double Strenght = Exp * 0.5 + 5;
 	boolean ChosenOne = Evenement.ChosenOne();
 	Tool FavoriteTool = new Tool("Hand");
@@ -23,8 +23,8 @@ public class Player {
     void PickABlock() {
         if(!inv.items[inv.currentSlot].getItemType().equals(lang.Messages.getString("dirt"))){
             this.inv.setCurrentSlotToFirstEmpty();
+            inv.items[inv.currentSlot].resetItem("dirt",0, true);
         }
-        inv.items[inv.currentSlot].setItemType("dirt");
         Object[] pick_a_block_args = {inv.items[inv.currentSlot].getItemType()};
         String pick_a_block = lang.getMessage("pick_a_block", pick_a_block_args);
         System.out.println(pick_a_block);
@@ -35,7 +35,7 @@ public class Player {
         String now_have = lang.getMessage("now_have", now_have_args);
         System.out.println(now_have);
 
-        this.Exp += 5;
+        this.Exp += 1;
     }
 
     void PlaceABlock() {
@@ -111,6 +111,8 @@ public class Player {
         inv.setCurrentSlotToFirstEmpty();
         int WoodFortuneAmount = 64; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
         inv.items[inv.currentSlot] = new Item("wood_log", WoodFortuneAmount, true);
+        System.out.println(lang.Messages.getString("cut_trees"));
+        this.Exp += (WoodFortuneAmount/10);
     }
 
     void Mine(Tool tool){
@@ -133,6 +135,10 @@ public class Player {
         inv.setCurrentSlotToFirstEmpty();
         int EmeraldFortuneAmount = 1;
         inv.items[inv.currentSlot] = new Item("emerald", EmeraldFortuneAmount, false);
+        this.Exp += ((CobbleFortuneAmount/8) + (DirtFortuneAmount/4) + IronOreFortuneAmount + (GoldOreFortuneAmount*1.5)
+                + (DiamondFortuneAmount*2) + (EmeraldFortuneAmount*4))/2;
+        System.out.println(lang.Messages.getString("mine"));
+
     }
 
     void Equip(){

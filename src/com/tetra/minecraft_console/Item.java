@@ -39,8 +39,14 @@ public class Item {
         return ItemType;
     }
 
-    public void setItemType(String itemType) {
-        ItemType = lang.Messages.getString(itemType);
+    public void setItemType(String item_type) {
+        ItemType = lang.Messages.getString(item_type);
+    }
+
+    public void resetItem(String item_type, int amount, boolean is_block){
+        setItemType(item_type);
+        setAmount(amount);
+        isBlock = is_block;
     }
 
 

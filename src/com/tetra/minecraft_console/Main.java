@@ -5,6 +5,13 @@ import java.util.Scanner;
 
 public class Main {
     public static Languages lang = new Languages();
+    private static String actions_1 = lang.Messages.getString("help_1") ;
+    private static String actions_2 = lang.Messages.getString("help_2") ;
+    private static String actions_3 = lang.Messages.getString("help_3") ;
+    private static String actions_4 = lang.Messages.getString("help_4") ;
+    private static String actions_5 = lang.Messages.getString("help_5") ;
+    private static String actions_exit = lang.Messages.getString("help_exit") ;
+
 
     public static void main(String[] args) {
         System.out.println(lang.Messages.getString("welcome"));
@@ -25,17 +32,18 @@ public class Main {
     }
 
     static void WaitForInstructions(Player P, Environnement E) {
-        String Instruction = null;
-        while (Instruction != "Exit") {
+        String PlayerWantsTo = null;
+        while (PlayerWantsTo != "Exit") {
             System.out.println(lang.Messages.getString("wait_for_instructions"));
 
             Scanner I = new Scanner(System.in);
-            Instruction = I.nextLine();
-            switch (Instruction) {
-                case "Describe":
+            PlayerWantsTo = I.nextLine();
+            int Inst = Instructions(PlayerWantsTo);
+            switch (Inst) {
+                case 1:
                     P.Describe();
                     break;
-                case "Pick a block":
+                case 2:
                     P.PickABlock();
 //                    if (Evenement.MobApparition(E)) {
 //                        Monster mob = new Monster(E);
@@ -47,7 +55,7 @@ public class Main {
 //                        P.Regen();
 //                    }
                     break;
-                case "Place a block":
+                case 3:
                     P.PlaceABlock();
 //                    if (Evenement.MobApparition(E)) {
 //                        Monster mob = new Monster(E);
@@ -59,7 +67,20 @@ public class Main {
 //                        P.Regen();
 //                    }
                     break;
-                case "/help":
+                case 4:
+                    P.Mine(P.FavoriteTool);
+                    break;
+                case 5:
+                    P.CutTrees(P.FavoriteTool);
+                    break;
+                case 6:
+                    P.TellMobEncountered();
+                    break;
+                case -1:
+                    System.out.println(lang.Messages.getString("bye"));
+                    PlayerWantsTo = "Exit";
+                    break;
+                case -2:
                     System.out.println(lang.Messages.getString("help_0"));
                     System.out.println("\t - " + lang.Messages.getString("help_1"));
                     System.out.println("\t - " + lang.Messages.getString("help_2"));
@@ -68,19 +89,9 @@ public class Main {
                     System.out.println("\t - " + lang.Messages.getString("help_5"));
                     System.out.println("\t - " + lang.Messages.getString("help_exit"));
                     break;
-                case "Mob Bestiary":
-                    P.TellMobEncountered();
-                    break;
-                case "Exit":
-                    System.out.println(lang.Messages.getString("bye"));
-                    Instruction = "Exit";
-                case "Mine":
-                    P.Mine(P.FavoriteTool);
-                    break;
-                case "Cut some trees":
-                    P.CutTrees(P.FavoriteTool);
+                default:
+                    System.out.println(lang.Messages.getString("NotExpectingThis"));
 
-                    break;
             }
         }
     }
@@ -96,5 +107,25 @@ public class Main {
         System.out.println(playername_set);
 
         return PlayerName;
+    }
+
+    static int Instructions(String instruction){
+        if (instruction.equals(lang.Messages.getString("help_1"))){
+            return 1;
+        } else if (instruction.equals(lang.Messages.getString("help_2"))) {
+            return 2;
+        } else if (instruction.equals(lang.Messages.getString("help_3"))) {
+            return 3;
+        } else if (instruction.equals(lang.Messages.getString("help_4"))) {
+            return 4;
+        } else if (instruction.equals(lang.Messages.getString("help_5"))) {
+            return 5;
+        } else if (instruction.equals(lang.Messages.getString("help_exit"))) {
+            return -1;
+        } else if (instruction.equals("/help")){
+            return -2;
+        } else {
+            return 0;
+        }
     }
 }
