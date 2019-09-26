@@ -111,11 +111,25 @@ public class Player {
         inv.setCurrentSlotToFirstEmpty();
         int WoodFortuneAmount = 64; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
         inv.items[inv.currentSlot] = new Item("wood_log", WoodFortuneAmount, true);
+
+        long total = 235;
+        long startTime = System.currentTimeMillis();
+
+        for (int i = 1; i <= total; i = i + 3) {
+            try {
+                Thread.sleep(50);
+                Sys.printProgress(startTime, total, i);
+            } catch (InterruptedException e) {
+            }
+
+        }
+
+        System.out.println();
         System.out.println(lang.Messages.getString("cut_trees"));
         this.Exp += (WoodFortuneAmount/10);
     }
 
-    void Mine(Tool tool){
+    void Mine(Tool tool) {
         //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTMENTS !!!
         inv.setCurrentSlotToFirstEmpty();
         int CobbleFortuneAmount = 64;
@@ -135,10 +149,22 @@ public class Player {
         inv.setCurrentSlotToFirstEmpty();
         int EmeraldFortuneAmount = 1;
         inv.items[inv.currentSlot] = new Item("emerald", EmeraldFortuneAmount, false);
-        this.Exp += ((CobbleFortuneAmount/8) + (DirtFortuneAmount/4) + IronOreFortuneAmount + (GoldOreFortuneAmount*1.5)
-                + (DiamondFortuneAmount*2) + (EmeraldFortuneAmount*4))/2;
-        System.out.println(lang.Messages.getString("mine"));
 
+        long total = 235;
+        long startTime = System.currentTimeMillis();
+
+        for (int i = 1; i <= total; i = i + 3) {
+            try {
+                Thread.sleep(100);
+                Sys.printProgress(startTime, total, i);
+            } catch (InterruptedException e) {
+            }
+
+        }
+        System.out.println();
+        this.Exp += ((CobbleFortuneAmount / 8) + (DirtFortuneAmount / 4) + IronOreFortuneAmount + (GoldOreFortuneAmount * 1.5)
+                + (DiamondFortuneAmount * 2) + (EmeraldFortuneAmount * 4)) / 2;
+        System.out.println(lang.Messages.getString("mine"));
     }
 
     void Equip(){

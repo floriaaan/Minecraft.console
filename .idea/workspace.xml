@@ -7,13 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Sys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_en_US.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_fr_FR.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_fr_FR.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -224,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569441650612</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fixed bugs">
+      <created>1569503622272</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1569503622272</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -283,7 +286,19 @@
     <MESSAGE value="Debugged Tools, Items, Inventory&#10;Preparing for &quot;bounds&quot; in Place and Pick" />
     <MESSAGE value="Preparing for &quot;bounds&quot; in Items and Inventory" />
     <MESSAGE value="Added Creeper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Creeper" />
+    <MESSAGE value="Fixed bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Minecraft_console$Main.ic" NAME="Main Coverage Results" MODIFIED="1568278809439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
