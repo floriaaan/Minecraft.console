@@ -33,7 +33,7 @@ public class Inventory {
 
     boolean setCurrentSlotToFirstOccupied() {
         currentSlot = 0;
-        while (items[currentSlot].isEmpty() && currentSlot <= 34) {
+        while (items[currentSlot].isEmpty() && currentSlot < 35) {
             ++currentSlot;
             //System.out.println("SLOT CHANGED :: " + currentSlot);
         }
@@ -49,7 +49,7 @@ public class Inventory {
     //Return the index of the First Occurrence of an Item (usage: Tool class)
     int FirstOccurrence(Item item) {
         for (int k = 0; k < 36; ++k) {
-            if (items[k].isEqual(item)) {
+            if (items[k].isSameType(item)) {
                 return k;
             }
         }
@@ -62,13 +62,14 @@ public class Inventory {
     */
     boolean setCurrentSlotToSameItemType(Item item) {
         currentSlot = 0;
-        while (!items[currentSlot].isEqual(item) && currentSlot < 35){
+        while (!items[currentSlot].isSameType(item) && currentSlot < 35){
             currentSlot++;
         }
-        return (items[currentSlot].isEqual(item));
+        return (items[currentSlot].isSameType(item));
     }
 
     void addAmount(Item item, int addingAmount) {
+
         if(setCurrentSlotToSameItemType(item)) {
             //If amount is greater than 64
             if(items[currentSlot].getAmount() + addingAmount > 64){
@@ -76,15 +77,24 @@ public class Inventory {
                 if(!items[currentSlot].isFull()) {
                     addingAmount = (items[currentSlot].getAmount() + addingAmount) - 64;
                     items[currentSlot].setAmount(64);
+                    System.out.println("SLOT ITEMTYPE :: " + items[currentSlot].getItemType() +
+                            "  DISPLAY TYPE:: " + items[currentSlot].getItemTypeForDisplay());
                     setCurrentSlotToFirstEmpty();
                     items[currentSlot] = new Item(item.getItemType(), addingAmount, item.isBlock);
                 } else { // Slot is already full
                     setCurrentSlotToFirstEmpty();
                     items[currentSlot] = new Item(item.getItemType(), addingAmount, item.isBlock);
                 }
+            } else {
+//                System.out.println("SLOT ITEMTYPE :: " + items[currentSlot].getItemType() +
+//                        "  DISPLAY TYPE:: " + items[currentSlot].getItemTypeForDisplay());
+                items[currentSlot].setAmount(items[currentSlot].getAmount() + addingAmount);
             }
         } else {
-            items[currentSlot].setAmount(items[currentSlot].getAmount() + addingAmount);
+            if(FirstOccurrence(item) == -1) {
+                setCurrentSlotToFirstEmpty();
+                items[currentSlot] = new Item(item.getItemType(), addingAmount, item.isBlock);
+            }
         }
     }
 

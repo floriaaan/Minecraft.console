@@ -3,7 +3,7 @@ package com.tetra.minecraft_console;
 import static com.tetra.minecraft_console.Main.lang;
 
 public class Item {
-    private String ItemType = "";
+    private String ItemType = null;
     int Amount = 0;
     boolean isBlock;
 
@@ -22,9 +22,8 @@ public class Item {
         return (getAmount() == 64);
     }
 
-    boolean isEqual(Item item) {
+    boolean isSameType(Item item) {
         return (this.getItemType().equals(item.getItemType())
-                && (this.getAmount() == item.getAmount())
                 && (this.isBlock == item.isBlock));
     }
 

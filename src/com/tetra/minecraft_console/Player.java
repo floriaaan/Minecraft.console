@@ -134,7 +134,8 @@ public class Player {
         inv.setCurrentSlotToFirstEmpty();
         int DirtFortuneAmount = 32;
         //inv.items[inv.currentSlot] = new Item("dirt", DirtFortuneAmount, true);
-        inv.addAmount( new Item("dirt", 0, true), DirtFortuneAmount);
+        Item dirt = new Item("dirt", 0, true);
+        inv.addAmount(dirt, DirtFortuneAmount);
         inv.setCurrentSlotToFirstEmpty();
         int IronOreFortuneAmount = 8;
         inv.items[inv.currentSlot] = new Item("iron_ore", IronOreFortuneAmount, true);
