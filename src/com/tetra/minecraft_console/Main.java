@@ -1,6 +1,7 @@
 package com.tetra.minecraft_console;
 
 
+import java.text.Normalizer;
 import java.util.Scanner;
 
 public class Main {
@@ -110,17 +111,31 @@ public class Main {
     }
 
     static int Instructions(String instruction) {
-        if (instruction.equals(lang.Messages.getString("help_1"))) {
+        instruction = instruction.toLowerCase();
+        instruction = Normalizer
+                        .normalize(instruction, Normalizer.Form.NFD)
+                        .replaceAll("[^\\p{ASCII}]", "");
+        String help_1 = lang.Messages.getString("help_1").toLowerCase();
+        help_1 = Normalizer
+                .normalize(help_1, Normalizer.Form.NFD)
+                .replaceAll("[^\\p{ASCII}]", "");
+        String help_2 = lang.Messages.getString("help_2").toLowerCase();
+        String help_3 = lang.Messages.getString("help_3").toLowerCase();
+        String help_4 = lang.Messages.getString("help_4").toLowerCase();
+        String help_5 = lang.Messages.getString("help_5").toLowerCase();
+        String help_exit = lang.Messages.getString("help_exit").toLowerCase();
+
+        if (instruction.equals(help_1)) {
             return 1;
-        } else if (instruction.equals(lang.Messages.getString("help_2"))) {
+        } else if (instruction.equals(help_2)) {
             return 2;
-        } else if (instruction.equals(lang.Messages.getString("help_3"))) {
+        } else if (instruction.equals(help_3)) {
             return 3;
-        } else if (instruction.equals(lang.Messages.getString("help_4"))) {
+        } else if (instruction.equals(help_4)) {
             return 4;
-        } else if (instruction.equals(lang.Messages.getString("help_5"))) {
+        } else if (instruction.equals(help_5)) {
             return 5;
-        } else if (instruction.equals(lang.Messages.getString("help_exit"))) {
+        } else if (instruction.equals(help_exit)) {
             return -1;
         } else if (instruction.equals("/help")) {
             return -2;

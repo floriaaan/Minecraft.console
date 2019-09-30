@@ -28,7 +28,7 @@ public class Player {
         String pick_a_block = lang.getMessage("pick_a_block", pick_a_block_args);
         System.out.println(pick_a_block);
 
-        inv.items[inv.currentSlot].setAmount(inv.items[inv.currentSlot].getAmount() + 1);
+        inv.addAmount(inv.items[inv.currentSlot], 1);
 
         Object[] now_have_args = {inv.items[inv.currentSlot].getAmount()};
         String now_have = lang.getMessage("now_have", now_have_args);
@@ -43,8 +43,7 @@ public class Player {
             String place_a_block = lang.getMessage("place_a_block", place_a_block_args);
             System.out.println(place_a_block);
 
-            inv.items[inv.currentSlot].setAmount(inv.items[inv.currentSlot].getAmount() - 1);
-
+            inv.addAmount(inv.items[inv.currentSlot], -1);
 
             Object[] now_have_args = {inv.items[inv.currentSlot].getAmount()};
             String now_have = lang.getMessage("now_have", now_have_args);
@@ -72,7 +71,7 @@ public class Player {
         Scanner I = new Scanner(System.in);
         String choice = I.nextLine();
 
-        if (choice.equals(lang.Messages.getString("yes"))) {
+        if (choice.toLowerCase().equals(lang.Messages.getString("yes").toLowerCase())) {
 
             for (int k = 0; k < 36; k++) {
                 if (inv.items[k].getAmount() > 0) {
@@ -86,6 +85,9 @@ public class Player {
                         System.out.println(describe_currentSlot);
                     }
                 }
+            }
+            if(inv.items[0].isEmpty()){
+                System.out.println(lang.Messages.getString("nothing_in_inv"));
             }
         }
 
