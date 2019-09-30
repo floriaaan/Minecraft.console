@@ -103,11 +103,9 @@ public class Player {
         System.out.println("hello");
     }
 
-    //TODO : Make items stackable
     void CutTrees(Tool tool) {
-        inv.setCurrentSlotToFirstEmpty();
         int WoodFortuneAmount = 64; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
-        inv.items[inv.currentSlot] = new Item("wood_log", WoodFortuneAmount, true);
+        inv.addAmount(new Item("wood_log", 0, true), WoodFortuneAmount);
 
         long total = 235;
         long startTime = System.currentTimeMillis();
@@ -128,28 +126,20 @@ public class Player {
 
     void Mine(Tool tool) {
         //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTMENTS !!!
-        inv.setCurrentSlotToFirstEmpty();
         int CobbleFortuneAmount = 64;
-        inv.items[inv.currentSlot] = new Item("cobblestone", CobbleFortuneAmount, true);
-        inv.setCurrentSlotToFirstEmpty();
+        inv.addAmount(new Item("cobblestone", 0, true), CobbleFortuneAmount);
         int DirtFortuneAmount = 32;
-        //inv.items[inv.currentSlot] = new Item("dirt", DirtFortuneAmount, true);
-        Item dirt = new Item("dirt", 0, true);
-        inv.addAmount(dirt, DirtFortuneAmount);
-        inv.setCurrentSlotToFirstEmpty();
+        inv.addAmount(new Item("dirt", 0, true), DirtFortuneAmount);
         int IronOreFortuneAmount = 8;
-        inv.items[inv.currentSlot] = new Item("iron_ore", IronOreFortuneAmount, true);
-        inv.setCurrentSlotToFirstEmpty();
+        inv.addAmount(new Item("iron_ore", 0, true), IronOreFortuneAmount);
         int GoldOreFortuneAmount = 4;
-        inv.items[inv.currentSlot] = new Item("gold_ore", GoldOreFortuneAmount, true);
-        inv.setCurrentSlotToFirstEmpty();
+        inv.addAmount(new Item("gold_ore", 0, true), GoldOreFortuneAmount);
         int DiamondFortuneAmount = 2;
-        inv.items[inv.currentSlot] = new Item("diamond", DiamondFortuneAmount, false);
-        inv.setCurrentSlotToFirstEmpty();
+        inv.addAmount(new Item("diamond", 0, false), DiamondFortuneAmount);
         int EmeraldFortuneAmount = 1;
-        inv.items[inv.currentSlot] = new Item("emerald", EmeraldFortuneAmount, false);
+        inv.addAmount(new Item("emerald", 0, false), EmeraldFortuneAmount);
 
-        /*long total = 235;
+        long total = 235;
         long startTime = System.currentTimeMillis();
 
         for (int i = 1; i <= total; i = i + 3) {
@@ -160,7 +150,7 @@ public class Player {
             }
 
         }
-        System.out.println();*/
+        System.out.println();
         this.Exp += ((CobbleFortuneAmount / 8) + (DirtFortuneAmount / 4) + IronOreFortuneAmount + (GoldOreFortuneAmount * 1.5)
                 + (DiamondFortuneAmount * 2) + (EmeraldFortuneAmount * 4)) / 2;
         System.out.println(lang.Messages.getString("mine"));
