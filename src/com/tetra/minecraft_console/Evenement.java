@@ -7,19 +7,13 @@ public class Evenement {
     public static boolean MobApparition(Environnement e) {
         Random r = new Random();
         int random = r.nextInt(100);
-        if (random > 80) {
-            return true;
-        }
-        return false;
+        return random > 80;
     }
 
-    public static boolean ChosenOne(){
+    public static boolean ChosenOne() {
         Random r = new Random();
         int random = r.nextInt(100);
-        if (random > 90) {
-            return true;
-        }
-        return false;
+        return random > 90;
     }
 
 }

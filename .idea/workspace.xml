@@ -6,11 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="ProgressBar from Mike Shauneu : https://stackoverflow.com/a/39257908/">
-      <change afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Minecraft.console.eml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Minecraft.console.userlibraries" afterDir="false" />
+    <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Environnement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Environnement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Evenement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Evenement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Languages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Languages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Tool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_en_US.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_fr_FR.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_fr_FR.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +52,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="languages" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -289,17 +298,6 @@
     <MESSAGE value="Added Creeper" />
     <MESSAGE value="Fixed bugs" />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Minecraft_console$Main.ic" NAME="Main Coverage Results" MODIFIED="1568278809439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

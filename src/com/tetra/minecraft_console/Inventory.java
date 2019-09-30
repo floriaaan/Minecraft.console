@@ -5,8 +5,9 @@ import static com.tetra.minecraft_console.Main.lang;
 public class Inventory {
     Item[] items = new Item[36];
     int currentSlot = 0;
-    public Inventory(){
-        for(int k = 0; k < 36; k++){
+
+    public Inventory() {
+        for (int k = 0; k < 36; k++) {
             items[k] = new Item("nothing", 0, false);
         }
 
@@ -17,19 +18,22 @@ public class Inventory {
         return items[Slot].isEmpty();
     }
 
-    void clearSlot(int Slot){
+    void clearSlot(int Slot) {
         items[Slot].setItemType("nothing");
         items[Slot].setAmount(0);
         items[Slot].isBlock = false;
     }
-    void setCurrentSlotToFirstEmpty(){
-        while(!items[currentSlot].isEmpty()) {
+
+    void setCurrentSlotToFirstEmpty() {
+        currentSlot = 0;
+        while (!items[currentSlot].isEmpty()) {
             ++currentSlot;
         }
     }
 
-    boolean setCurrentSlotToFirstOccupied(){
-        while(items[currentSlot].isEmpty() && currentSlot <= 34){
+    boolean setCurrentSlotToFirstOccupied() {
+        currentSlot = 0;
+        while (items[currentSlot].isEmpty() && currentSlot <= 34) {
             ++currentSlot;
             //System.out.println("SLOT CHANGED :: " + currentSlot);
         }
@@ -41,27 +45,47 @@ public class Inventory {
         return true;
     }
 
-    int FirstOccurrence(Item item){
-        for(int k = 0; k < 36; ++k){
-            if(items[k].isEqual(item)) {
+
+    //Return the index of the First Occurrence of an Item (usage: Tool class)
+    int FirstOccurrence(Item item) {
+        for (int k = 0; k < 36; ++k) {
+            if (items[k].isEqual(item)) {
                 return k;
             }
         }
         return -1;
     }
 
-    void setCurrentSlotToSameItemType(Item item){
-        int k = 0;
-        while(!item.getItemType().equals(items[currentSlot].getItemType()) || (k < (currentSlot - k))){
-            ++currentSlot;
-            ++k;
+    /*
+    Make currentSlot points on the first Item that equals Item in parameters.
+    Return true if there is an Item that equals, else false.
+    */
+    boolean setCurrentSlotToSameItemType(Item item) {
+        currentSlot = 0;
+        while (!items[currentSlot].isEqual(item) && currentSlot < 35){
+            currentSlot++;
         }
+        return (items[currentSlot].isEqual(item));
     }
 
-    void addAmount(Item item, int addingAmount){
-        this.setCurrentSlotToSameItemType(item);
-
-
+    void addAmount(Item item, int addingAmount) {
+        if(setCurrentSlotToSameItemType(item)) {
+            //If amount is greater than 64
+            if(items[currentSlot].getAmount() + addingAmount > 64){
+                //Testing if the current amount is already 64 if not adding the difference
+                if(!items[currentSlot].isFull()) {
+                    addingAmount = (items[currentSlot].getAmount() + addingAmount) - 64;
+                    items[currentSlot].setAmount(64);
+                    setCurrentSlotToFirstEmpty();
+                    items[currentSlot] = new Item(item.getItemType(), addingAmount, item.isBlock);
+                } else { // Slot is already full
+                    setCurrentSlotToFirstEmpty();
+                    items[currentSlot] = new Item(item.getItemType(), addingAmount, item.isBlock);
+                }
+            }
+        } else {
+            items[currentSlot].setAmount(items[currentSlot].getAmount() + addingAmount);
+        }
     }
 
 

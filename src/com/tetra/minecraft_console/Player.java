@@ -11,21 +11,20 @@ public class Player {
         Name = playerName;
     }
 
-	Inventory inv = new Inventory();
-	int Health = 20;
-	double Exp = 0;
-	double Strenght = Exp * 0.5 + 5;
-	boolean ChosenOne = Evenement.ChosenOne();
-	Tool FavoriteTool = new Tool("Hand");
-
+    Inventory inv = new Inventory();
+    int Health = 20;
+    double Exp = 0;
+    double Strenght = Exp * 0.5 + 5;
+    boolean ChosenOne = Evenement.ChosenOne();
+    Tool FavoriteTool = new Tool("Hand");
 
 
     void PickABlock() {
-        if(!inv.items[inv.currentSlot].getItemType().equals(lang.Messages.getString("dirt"))){
+        if (!inv.items[inv.currentSlot].getItemType().equals("dirt")) {
             this.inv.setCurrentSlotToFirstEmpty();
-            inv.items[inv.currentSlot].resetItem("dirt",0, true);
+            inv.items[inv.currentSlot].resetItem("dirt", 0, true);
         }
-        Object[] pick_a_block_args = {inv.items[inv.currentSlot].getItemType()};
+        Object[] pick_a_block_args = {inv.items[inv.currentSlot].getItemTypeForDisplay()};
         String pick_a_block = lang.getMessage("pick_a_block", pick_a_block_args);
         System.out.println(pick_a_block);
 
@@ -39,8 +38,8 @@ public class Player {
     }
 
     void PlaceABlock() {
-        if(inv.items[inv.currentSlot].getAmount() > 0) {
-            Object[] place_a_block_args = {inv.items[inv.currentSlot].getItemType()};
+        if (inv.items[inv.currentSlot].getAmount() > 0) {
+            Object[] place_a_block_args = {inv.items[inv.currentSlot].getItemTypeForDisplay()};
             String place_a_block = lang.getMessage("place_a_block", place_a_block_args);
             System.out.println(place_a_block);
 
@@ -52,7 +51,7 @@ public class Player {
             System.out.println(now_have);
             this.Exp += 1;
         } else {
-            if(inv.setCurrentSlotToFirstOccupied()){
+            if (inv.setCurrentSlotToFirstOccupied()) {
                 System.out.println(lang.Messages.getString("place_a_block_slot_changed"));
             }
         }
@@ -60,7 +59,7 @@ public class Player {
 
     }
 
-    void Describe(){
+    void Describe() {
         Object[] describe_health_args = {Name, Health};
         String describe_health = lang.getMessage("describe_health", describe_health_args);
         System.out.println(describe_health);
@@ -73,16 +72,16 @@ public class Player {
         Scanner I = new Scanner(System.in);
         String choice = I.nextLine();
 
-        if (choice.equals("Yes")){
+        if (choice.equals(lang.Messages.getString("yes"))) {
 
-            for(int k = 0; k < 36; k++) {
-                if (inv.items[k].getAmount() > 0){
-                    if(inv.items[k].isBlock) {
-                        Object[] describe_currentSlot_args = {Name, inv.items[k].getAmount(), inv.items[k].getItemType()};
+            for (int k = 0; k < 36; k++) {
+                if (inv.items[k].getAmount() > 0) {
+                    if (inv.items[k].isBlock) {
+                        Object[] describe_currentSlot_args = {Name, inv.items[k].getAmount(), inv.items[k].getItemTypeForDisplay()};
                         String describe_currentSlot = lang.getMessage("describe_currentBlock", describe_currentSlot_args);
                         System.out.println(describe_currentSlot);
                     } else {
-                        Object[] describe_currentSlot_args = {Name, inv.items[k].getAmount(), inv.items[k].getItemType()};
+                        Object[] describe_currentSlot_args = {Name, inv.items[k].getAmount(), inv.items[k].getItemTypeForDisplay()};
                         String describe_currentSlot = lang.getMessage("describe_currentItem", describe_currentSlot_args);
                         System.out.println(describe_currentSlot);
                     }
@@ -91,11 +90,9 @@ public class Player {
         }
 
 
-
-
     }
 
-    void Regen(){
+    void Regen() {
         this.Health += 3;
         Object[] regen_args = {Health};
         String regen = lang.getMessage("regen", regen_args);
@@ -107,7 +104,7 @@ public class Player {
     }
 
     //TODO : Make items stackable
-    void CutTrees(Tool tool){
+    void CutTrees(Tool tool) {
         inv.setCurrentSlotToFirstEmpty();
         int WoodFortuneAmount = 64; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
         inv.items[inv.currentSlot] = new Item("wood_log", WoodFortuneAmount, true);
@@ -126,7 +123,7 @@ public class Player {
 
         System.out.println();
         System.out.println(lang.Messages.getString("cut_trees"));
-        this.Exp += (WoodFortuneAmount/10);
+        this.Exp += (WoodFortuneAmount / 10);
     }
 
     void Mine(Tool tool) {
@@ -136,7 +133,8 @@ public class Player {
         inv.items[inv.currentSlot] = new Item("cobblestone", CobbleFortuneAmount, true);
         inv.setCurrentSlotToFirstEmpty();
         int DirtFortuneAmount = 32;
-        inv.items[inv.currentSlot] = new Item("dirt", DirtFortuneAmount, true);
+        //inv.items[inv.currentSlot] = new Item("dirt", DirtFortuneAmount, true);
+        inv.addAmount( new Item("dirt", 0, true), DirtFortuneAmount);
         inv.setCurrentSlotToFirstEmpty();
         int IronOreFortuneAmount = 8;
         inv.items[inv.currentSlot] = new Item("iron_ore", IronOreFortuneAmount, true);
@@ -150,26 +148,26 @@ public class Player {
         int EmeraldFortuneAmount = 1;
         inv.items[inv.currentSlot] = new Item("emerald", EmeraldFortuneAmount, false);
 
-        long total = 235;
+        /*long total = 235;
         long startTime = System.currentTimeMillis();
 
         for (int i = 1; i <= total; i = i + 3) {
             try {
-                Thread.sleep(100);
+                Thread.sleep(200);
                 Sys.printProgress(startTime, total, i);
             } catch (InterruptedException e) {
             }
 
         }
-        System.out.println();
+        System.out.println();*/
         this.Exp += ((CobbleFortuneAmount / 8) + (DirtFortuneAmount / 4) + IronOreFortuneAmount + (GoldOreFortuneAmount * 1.5)
                 + (DiamondFortuneAmount * 2) + (EmeraldFortuneAmount * 4)) / 2;
         System.out.println(lang.Messages.getString("mine"));
     }
 
-    void Equip(){
+    void Equip() {
         int index = inv.FirstOccurrence(new Item("diamond_pickaxe", 1, false));
-        if(index < 0) {
+        if (index < 0) {
             //Can't Equip
         } else {
             this.FavoriteTool.copy("diamond_pickaxe", 1, false);
@@ -178,7 +176,7 @@ public class Player {
         }
     }
 
-    void Craft(String ItemWanted){
+    void Craft(String ItemWanted) {
         //FirstOccurrence of woodlog to make 4* planks
         //FirstOccurrence of woodplanks (need 2 planks) to make 4* woodstick
         //FirstOccurrence of diamond and woodsticks (need 3 diamonds and 2 woodstick)

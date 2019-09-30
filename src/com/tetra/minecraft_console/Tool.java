@@ -5,14 +5,14 @@ public class Tool {
     int durability;
     double fortune = 1;
 
-    public Tool(String itemType){
+    public Tool(String itemType) {
         item.isBlock = false;
         item.setItemType(itemType);
         item.Amount = 1;
 
-        if(itemType.startsWith("iron")){
+        if (itemType.startsWith("iron")) {
             durability = 16;
-        } else if (itemType.startsWith("gold")){
+        } else if (itemType.startsWith("gold")) {
             durability = 24;
         } else if (itemType.startsWith("diamond")) {
             durability = 64;
@@ -25,16 +25,16 @@ public class Tool {
         }
     }
 
-    void copy(String item_type, int amount, boolean is_block){
+    void copy(String item_type, int amount, boolean is_block) {
         item.setItemType(item_type);
         item.setAmount(amount);
         item.isBlock = is_block;
     }
 
-    void updateDurability(){
-        if(this.item.getItemType().startsWith("iron")){
+    void updateDurability() {
+        if (this.item.getItemType().startsWith("iron")) {
             durability = 16;
-        } else if (this.item.getItemType().startsWith("gold")){
+        } else if (this.item.getItemType().startsWith("gold")) {
             durability = 24;
         } else if (this.item.getItemType().startsWith("diamond")) {
             durability = 64;

@@ -5,12 +5,12 @@ import java.util.Scanner;
 
 public class Main {
     public static Languages lang = new Languages();
-    private static String actions_1 = lang.Messages.getString("help_1") ;
-    private static String actions_2 = lang.Messages.getString("help_2") ;
-    private static String actions_3 = lang.Messages.getString("help_3") ;
-    private static String actions_4 = lang.Messages.getString("help_4") ;
-    private static String actions_5 = lang.Messages.getString("help_5") ;
-    private static String actions_exit = lang.Messages.getString("help_exit") ;
+    private static String actions_1 = lang.Messages.getString("help_1");
+    private static String actions_2 = lang.Messages.getString("help_2");
+    private static String actions_3 = lang.Messages.getString("help_3");
+    private static String actions_4 = lang.Messages.getString("help_4");
+    private static String actions_5 = lang.Messages.getString("help_5");
+    private static String actions_exit = lang.Messages.getString("help_exit");
 
 
     public static void main(String[] args) {
@@ -102,15 +102,15 @@ public class Main {
         Scanner userName = new Scanner(System.in);
         String PlayerName = userName.nextLine();
 
-        Object[] playername_set_args = {PlayerName, };
+        Object[] playername_set_args = {PlayerName};
         String playername_set = lang.getMessage("playername_set", playername_set_args);
         System.out.println(playername_set);
 
         return PlayerName;
     }
 
-    static int Instructions(String instruction){
-        if (instruction.equals(lang.Messages.getString("help_1"))){
+    static int Instructions(String instruction) {
+        if (instruction.equals(lang.Messages.getString("help_1"))) {
             return 1;
         } else if (instruction.equals(lang.Messages.getString("help_2"))) {
             return 2;
@@ -122,7 +122,7 @@ public class Main {
             return 5;
         } else if (instruction.equals(lang.Messages.getString("help_exit"))) {
             return -1;
-        } else if (instruction.equals("/help")){
+        } else if (instruction.equals("/help")) {
             return -2;
         } else {
             return 0;

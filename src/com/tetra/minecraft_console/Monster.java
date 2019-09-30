@@ -7,19 +7,18 @@ import static com.tetra.minecraft_console.Main.lang;
 
 public class Monster {
     String[] mobList = {lang.Messages.getString("zombie"),
-                lang.Messages.getString("skeleton"),
-                lang.Messages.getString("spider"),
-                lang.Messages.getString("creeper")};
+            lang.Messages.getString("skeleton"),
+            lang.Messages.getString("spider"),
+            lang.Messages.getString("creeper")};
     int mobHealth = 10;
     double mobStrenght = 3;
-    String mobType = new String();
+    String mobType = "";
 
     Random r = new Random();
     int random = r.nextInt(4);
 
 
-
-    public Monster(Environnement environnement){
+    public Monster(Environnement environnement) {
         mobType = mobList[random];
         if (!environnement.isDay) {
             mobStrenght += 4;
@@ -30,8 +29,8 @@ public class Monster {
     }
 
 
-    void hitThePlayer(Player P){
-        if(P.Health >= this.mobStrenght) {
+    void hitThePlayer(Player P) {
+        if (P.Health >= this.mobStrenght) {
             P.Health -= mobStrenght;
 
             Object[] hit_the_player_args = {mobType, mobStrenght};
@@ -58,6 +57,7 @@ public class Monster {
             }
         }
     }
+
     void hitByPlayer(Player P) {
         if (this.mobHealth > P.Strenght) {
             this.mobHealth -= P.Strenght;
@@ -82,7 +82,6 @@ public class Monster {
             Object[] hit_by_player_exp_args = {P.Exp};
             String hit_by_player_exp = lang.getMessage("hit_by_player_exp", hit_by_player_exp_args);
             System.out.println(hit_by_player_exp);
-
 
 
         }

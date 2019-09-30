@@ -11,27 +11,19 @@ public class Environnement {
     Random r = new Random();
     int random = r.nextInt(100);
 
-    public Environnement(){
-        if (random > 50){
-            isSunny = false;
-        } else {
-            isSunny = true;
-        }
-        if (random > 70){
-            isDay = false;
-        } else {
-            isDay = true;
-        }
+    public Environnement() {
+        isSunny = random <= 50;
+        isDay = random <= 70;
     }
 
-    void tellWeather(){
+    void tellWeather() {
 
-        if(isSunny) {
+        if (isSunny) {
             System.out.println(lang.Messages.getString("is_sunny"));
         } else {
             System.out.println(lang.Messages.getString("is_rainy"));
         }
-        if (isDay){
+        if (isDay) {
             System.out.println(lang.Messages.getString("is_day"));
         } else {
             System.out.println(lang.Messages.getString("is_night"));
