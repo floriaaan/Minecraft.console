@@ -1,34 +1,34 @@
 package com.tetra.minecraft_console;
 
 
+import java.io.*;
 import java.text.Normalizer;
 import java.util.Scanner;
 
 public class Main {
     public static Languages lang = new Languages();
-    private static String actions_1 = lang.Messages.getString("help_1");
-    private static String actions_2 = lang.Messages.getString("help_2");
-    private static String actions_3 = lang.Messages.getString("help_3");
-    private static String actions_4 = lang.Messages.getString("help_4");
-    private static String actions_5 = lang.Messages.getString("help_5");
-    private static String actions_exit = lang.Messages.getString("help_exit");
 
 
     public static void main(String[] args) {
-        System.out.println(lang.Messages.getString("welcome"));
+        System.out.println("\t####\t" + lang.Messages.getString("welcome") + "\t####\t");
+        Player P = null;
+        while (P == null){
+            P = Sys.Play();
+        }
+
 
 
         //Preparing for more languages
-        //System.out.println("Locale::" + lang.currentLocale);
+        //System.out.println("LOCALE :: " + lang.currentLocale);
 
         // Setting Up the Game
-        String PlayerName = AskForPlayerName();
+
         Environnement e = new Environnement();
-        Player Steve = new Player(PlayerName);
+
         e.tellWeather();
 
         // Instructions
-        WaitForInstructions(Steve, e);
+        WaitForInstructions(P, e);
 
     }
 
@@ -78,6 +78,7 @@ public class Main {
                     P.TellMobEncountered();
                     break;
                 case -1:
+                    Sys.saveGame(P);
                     System.out.println(lang.Messages.getString("bye"));
                     PlayerWantsTo = "Exit";
                     break;
@@ -98,23 +99,13 @@ public class Main {
     }
 
 
-    static String AskForPlayerName() {
-        System.out.println(lang.Messages.getString("ask_for_playername"));
-        Scanner userName = new Scanner(System.in);
-        String PlayerName = userName.nextLine();
 
-        Object[] playername_set_args = {PlayerName};
-        String playername_set = lang.getMessage("playername_set", playername_set_args);
-        System.out.println(playername_set);
-
-        return PlayerName;
-    }
 
     static int Instructions(String instruction) {
         instruction = instruction.toLowerCase();
         instruction = Normalizer
-                        .normalize(instruction, Normalizer.Form.NFD)
-                        .replaceAll("[^\\p{ASCII}]", "");
+                .normalize(instruction, Normalizer.Form.NFD)
+                .replaceAll("[^\\p{ASCII}]", "");
         String help_1 = lang.Messages.getString("help_1").toLowerCase();
         help_1 = Normalizer
                 .normalize(help_1, Normalizer.Form.NFD)

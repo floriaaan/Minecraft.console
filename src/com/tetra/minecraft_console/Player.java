@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import static com.tetra.minecraft_console.Main.lang;
 
-public class Player {
+public class Player implements java.io.Serializable {
     String Name;
 
     public Player(String playerName) {
@@ -14,7 +14,7 @@ public class Player {
     Inventory inv = new Inventory();
     int Health = 20;
     double Exp = 0;
-    double Strenght = Exp * 0.5 + 5;
+    double Strength = Exp * 0.5 + 5;
     boolean ChosenOne = Evenement.ChosenOne();
     Tool FavoriteTool = new Tool("Hand");
 
@@ -86,7 +86,7 @@ public class Player {
                     }
                 }
             }
-            if(inv.items[0].isEmpty()){
+            if (inv.items[0].isEmpty()) {
                 System.out.println(lang.Messages.getString("nothing_in_inv"));
             }
         }
@@ -115,7 +115,7 @@ public class Player {
         for (int i = 1; i <= total; i = i + 3) {
             try {
                 Thread.sleep(50);
-                Sys.printProgress(startTime, total, i);
+                Sys.printProgressBar(startTime, total, i);
             } catch (InterruptedException e) {
             }
 
@@ -147,7 +147,7 @@ public class Player {
         for (int i = 1; i <= total; i = i + 3) {
             try {
                 Thread.sleep(200);
-                Sys.printProgress(startTime, total, i);
+                Sys.printProgressBar(startTime, total, i);
             } catch (InterruptedException e) {
             }
 

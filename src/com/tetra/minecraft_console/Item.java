@@ -2,7 +2,7 @@ package com.tetra.minecraft_console;
 
 import static com.tetra.minecraft_console.Main.lang;
 
-public class Item {
+public class Item implements java.io.Serializable {
     private String ItemType = null;
     int Amount = 0;
     boolean isBlock;
@@ -35,7 +35,10 @@ public class Item {
         Amount = amount;
     }
 
-    public String getItemType(){ return ItemType; }
+    public String getItemType() {
+        return ItemType;
+    }
+
     public String getItemTypeForDisplay() {
         return lang.Messages.getString(ItemType);
     }

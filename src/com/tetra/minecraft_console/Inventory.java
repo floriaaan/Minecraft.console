@@ -2,7 +2,7 @@ package com.tetra.minecraft_console;
 
 import static com.tetra.minecraft_console.Main.lang;
 
-public class Inventory {
+public class Inventory implements java.io.Serializable {
     Item[] items = new Item[36];
     int currentSlot = 0;
 
@@ -62,7 +62,7 @@ public class Inventory {
     */
     boolean setCurrentSlotToSameItemType(Item item) {
         currentSlot = 0;
-        while (!items[currentSlot].isSameType(item) && currentSlot < 35){
+        while (!items[currentSlot].isSameType(item) && currentSlot < 35) {
             currentSlot++;
         }
         return (items[currentSlot].isSameType(item));
@@ -70,11 +70,11 @@ public class Inventory {
 
     void addAmount(Item item, int addingAmount) {
 
-        if(setCurrentSlotToSameItemType(item)) {
+        if (setCurrentSlotToSameItemType(item)) {
             //If amount is greater than 64
-            if(items[currentSlot].getAmount() + addingAmount > 64){
+            if (items[currentSlot].getAmount() + addingAmount > 64) {
                 //Testing if the current amount is already 64 if not adding the difference
-                if(!items[currentSlot].isFull()) {
+                if (!items[currentSlot].isFull()) {
                     addingAmount = (items[currentSlot].getAmount() + addingAmount) - 64;
                     items[currentSlot].setAmount(64);
                     System.out.println("SLOT ITEMTYPE :: " + items[currentSlot].getItemType() +
@@ -91,7 +91,7 @@ public class Inventory {
                 items[currentSlot].setAmount(items[currentSlot].getAmount() + addingAmount);
             }
         } else {
-            if(FirstOccurrence(item) == -1) {
+            if (FirstOccurrence(item) == -1) {
                 setCurrentSlotToFirstEmpty();
                 items[currentSlot] = new Item(item.getItemType(), addingAmount, item.isBlock);
             }

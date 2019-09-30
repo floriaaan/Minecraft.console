@@ -1,6 +1,6 @@
 package com.tetra.minecraft_console;
 
-public class Tool {
+public class Tool implements java.io.Serializable {
     Item item = new Item("nothing", 0, false);
     int durability;
     double fortune = 1;

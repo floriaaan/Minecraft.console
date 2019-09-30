@@ -59,10 +59,10 @@ public class Monster {
     }
 
     void hitByPlayer(Player P) {
-        if (this.mobHealth > P.Strenght) {
-            this.mobHealth -= P.Strenght;
+        if (this.mobHealth > P.Strength) {
+            this.mobHealth -= P.Strength;
 
-            Object[] hit_by_player_args = {mobType, P.Strenght};
+            Object[] hit_by_player_args = {mobType, P.Strength};
             String hit_by_player = lang.getMessage("hit_by_player", hit_by_player_args);
             System.out.println(hit_by_player);
 
@@ -77,7 +77,7 @@ public class Monster {
             System.out.println(hit_by_player_dead);
 
             P.Exp += 20;
-            P.Strenght = P.Exp * 0.5 + 5;
+            P.Strength = P.Exp * 0.5 + 5;
 
             Object[] hit_by_player_exp_args = {P.Exp};
             String hit_by_player_exp = lang.getMessage("hit_by_player_exp", hit_by_player_exp_args);
