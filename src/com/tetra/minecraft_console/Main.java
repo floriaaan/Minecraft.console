@@ -125,7 +125,7 @@ public class Main {
         String help_5 = lang.Messages.getString("help_5").toLowerCase();
         String help_exit = lang.Messages.getString("help_exit").toLowerCase();
 
-        if (instruction.equals(help_1)) {
+        if (instruction.equals(help_1) || instruction.equals("dcrire")) { //Due to Windows
             return 1;
         } else if (instruction.equals(help_2)) {
             return 2;
@@ -140,6 +140,7 @@ public class Main {
         } else if (instruction.equals("/help")) {
             return -2;
         } else {
+            System.out.println("INSTRUCTION :: " + instruction);
             return 0;
         }
     }

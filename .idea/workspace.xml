@@ -6,10 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="ProgressBar from Mike Shauneu : https://stackoverflow.com/a/39257908/">
+    <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -241,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569847099812</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Included Normalize input">
+      <created>1569853451709</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1569853451709</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -303,7 +309,8 @@
     <MESSAGE value="Fixed bugs" />
     <MESSAGE value="Adding addAmount method without breaking Item class" />
     <MESSAGE value="Working addAmount method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working addAmount method" />
+    <MESSAGE value="Included Normalize input" />
+    <option name="LAST_COMMIT_MESSAGE" value="Included Normalize input" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Minecraft_console$Main.ic" NAME="Main Coverage Results" MODIFIED="1568278809439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
