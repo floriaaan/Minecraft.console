@@ -13,18 +13,9 @@ public class Main {
         System.out.println("\t####\t" + lang.Messages.getString("welcome") + "\t####\t");
         Player P = null;
         while (P == null){
-            P = Sys.Play();
+            P = Sys.Load();
         }
-
-
-
-        //Preparing for more languages
-        //System.out.println("LOCALE :: " + lang.currentLocale);
-
-        // Setting Up the Game
-
         Environnement e = new Environnement();
-
         e.tellWeather();
 
         // Instructions
