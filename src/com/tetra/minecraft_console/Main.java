@@ -1,7 +1,7 @@
 package com.tetra.minecraft_console;
 
 
-import java.io.*;
+
 import java.text.Normalizer;
 import java.util.Scanner;
 
@@ -107,7 +107,7 @@ public class Main {
         String help_5 = lang.Messages.getString("help_5").toLowerCase();
         String help_exit = lang.Messages.getString("help_exit").toLowerCase();
 
-        if (instruction.equals(help_1) || instruction.equals("dcrire")) { //Due to Windows
+        if (instruction.equals(help_1) || instruction.equals("dcrire") || instruction.equals("d crire")) { //Due to Windows
             return 1;
         } else if (instruction.equals(help_2)) {
             return 2;
