@@ -106,7 +106,7 @@ public class Player implements java.io.Serializable {
     }
 
     void CutTrees(Tool tool) {
-        int WoodFortuneAmount = 64; //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTEMENTS !!!
+        int WoodFortuneAmount = (int) (64 * FavoriteTool.fortune) ;
         inv.addAmount(new Item("wood_log", 0, true), WoodFortuneAmount);
 
         long total = 235;
@@ -127,18 +127,22 @@ public class Player implements java.io.Serializable {
     }
 
     void Mine(Tool tool) {
-        //TODO : Make depending on tool.fortune !!! REQUIRE ENCHANTMENTS !!!
-        int CobbleFortuneAmount = 64;
+        
+        int CobbleFortuneAmount = (int) (64 * FavoriteTool.fortune);
         inv.addAmount(new Item("cobblestone", 0, true), CobbleFortuneAmount);
-        int DirtFortuneAmount = 32;
+        int DirtFortuneAmount = (int) (32 * FavoriteTool.fortune);
         inv.addAmount(new Item("dirt", 0, true), DirtFortuneAmount);
-        int IronOreFortuneAmount = 8;
+        int CoalFortuneAmount = (int) (16 * FavoriteTool.fortune);
+        inv.addAmount(new Item("coal", 0, false), CoalFortuneAmount);
+        int IronOreFortuneAmount = (int) (8 * FavoriteTool.fortune);
         inv.addAmount(new Item("iron_ore", 0, true), IronOreFortuneAmount);
-        int GoldOreFortuneAmount = 4;
+        int GoldOreFortuneAmount = (int) (4 * FavoriteTool.fortune);
         inv.addAmount(new Item("gold_ore", 0, true), GoldOreFortuneAmount);
-        int DiamondFortuneAmount = 2;
+        int LapisFortuneAmount = (int) (24 * FavoriteTool.fortune);
+        inv.addAmount(new Item("lapislazuli", 0, false), LapisFortuneAmount);
+        int DiamondFortuneAmount = (int) (2 * FavoriteTool.fortune);
         inv.addAmount(new Item("diamond", 0, false), DiamondFortuneAmount);
-        int EmeraldFortuneAmount = 1;
+        int EmeraldFortuneAmount = (int) (1 * FavoriteTool.fortune);
         inv.addAmount(new Item("emerald", 0, false), EmeraldFortuneAmount);
 
         long total = 235;
@@ -146,7 +150,7 @@ public class Player implements java.io.Serializable {
 
         for (int i = 1; i <= total; i = i + 3) {
             try {
-                Thread.sleep(200);
+                Thread.sleep(100);
                 Sys.printProgressBar(startTime, total, i);
             } catch (InterruptedException e) {
             }
