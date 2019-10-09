@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import static com.tetra.minecraft_console.Main.lang;
 
 public class Sys {
-    private static String savePath = "src/com/tetra/minecraft_console/saves/";
+    private static String savePath = "saves/";
 
     static void printProgressBar(long startTime, long total, long current) {
         long eta = current == 0 ? 0 :
@@ -72,7 +72,7 @@ public class Sys {
         return PlayerName;
     }
 
-    static Player Load() {
+    static Player Load() { //TODO: if no saves folder, nullpointerexception
         System.out.println(lang.Messages.getString("title"));
         System.out.println("\t" + lang.Messages.getString("title_newgame"));
         System.out.println("\t" + lang.Messages.getString("title_load"));
@@ -83,8 +83,6 @@ public class Sys {
             String PlayerName = AskForPlayerName();
             return new Player(PlayerName);
         } else if (Instruction.toLowerCase().equals(lang.Messages.getString("title_load").toLowerCase())) {
-            //TODO: List all saves available.
-            //TODO: If no saves available, return null.
             File[] saves = new File(Sys.savePath).listFiles((dir, name) -> name.endsWith(".ser"));
             if (saves.length > 0) {
                 for (int k = 0; k < saves.length; k++) {

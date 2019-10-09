@@ -37,27 +37,34 @@ public class Main {
                     break;
                 case 2:
                     P.PickABlock();
-//                    if (Evenement.MobApparition(E)) {
-//                        Monster mob = new Monster(E);
-//                        //while ???
-//                        while (mob.mobHealth >= 0 || P.Health >= 0) {
-//                            mob.hitThePlayer(P);
-//                            mob.hitByPlayer(P);
-//                        }
-//                        P.Regen();
-//                    }
+                   if (Evenement.MobApparition(E)) {
+                        Monster mob = new Monster(E);
+                        //while ???
+                        while (mob.mobHealth > 0 && P.Health > 0) {
+                            if (mob.mobHealth > 0) {
+                                mob.hitThePlayer(P);
+                            }
+                            if (P.Health > 0) {
+                                mob.hitByPlayer(P);
+                            }                            
+                        }
+                        P.Regen();
+                   }
                     break;
                 case 3:
                     P.PlaceABlock();
-//                    if (Evenement.MobApparition(E)) {
-//                        Monster mob = new Monster(E);
-//                        while (mob.mobHealth >= 0) {
-//                            mob.hitThePlayer(P);
-//                            mob.hitByPlayer(P);
-//
-//                        }
-//                        P.Regen();
-//                    }
+                    if (Evenement.MobApparition(E)) {
+                        Monster mob = new Monster(E);
+                        while (mob.mobHealth > 0 && P.Health > 0) {
+                            if (mob.mobHealth > 0) {
+                                mob.hitThePlayer(P);
+                            }
+                            if (P.Health > 0) {
+                                mob.hitByPlayer(P);
+                            }                            
+                        }
+                        P.Regen();
+                    }
                     break;
                 case 4:
                     P.Mine(P.FavoriteTool);
@@ -66,6 +73,9 @@ public class Main {
                     P.CutTrees(P.FavoriteTool);
                     break;
                 case 6:
+                    P.Enchant();
+                    break;
+                case 7:
                     P.TellMobEncountered();
                     break;
                 case -1:
@@ -80,6 +90,7 @@ public class Main {
                     System.out.println("\t - " + lang.Messages.getString("help_3"));
                     System.out.println("\t - " + lang.Messages.getString("help_4"));
                     System.out.println("\t - " + lang.Messages.getString("help_5"));
+                    System.out.println("\t - " + lang.Messages.getString("help_6"));
                     System.out.println("\t - " + lang.Messages.getString("help_exit"));
                     break;
                 default:
@@ -105,9 +116,11 @@ public class Main {
         String help_3 = lang.Messages.getString("help_3").toLowerCase();
         String help_4 = lang.Messages.getString("help_4").toLowerCase();
         String help_5 = lang.Messages.getString("help_5").toLowerCase();
+        String help_6 = lang.Messages.getString("help_6").toLowerCase();
         String help_exit = lang.Messages.getString("help_exit").toLowerCase();
 
-        if (instruction.equals(help_1) || instruction.equals("dcrire") || instruction.equals("d crire")) { //Due to Windows
+        if (instruction.equals(help_1) || instruction.equals("dcrire") 
+                                       || instruction.equals("d crire")) { //Due to Windows
             return 1;
         } else if (instruction.equals(help_2)) {
             return 2;
@@ -117,6 +130,8 @@ public class Main {
             return 4;
         } else if (instruction.equals(help_5)) {
             return 5;
+        } else if (instruction.equals(help_6)) {
+            return 6;
         } else if (instruction.equals(help_exit)) {
             return -1;
         } else if (instruction.equals("/help")) {

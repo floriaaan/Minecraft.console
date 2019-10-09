@@ -3,6 +3,10 @@ package com.tetra.minecraft_console;
 import static com.tetra.minecraft_console.Main.lang;
 
 public class Item implements java.io.Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private String ItemType = null;
     int Amount = 0;
     boolean isBlock;

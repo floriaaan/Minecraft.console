@@ -1,8 +1,13 @@
 package com.tetra.minecraft_console;
 
 public class Tool implements java.io.Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     Item item = new Item("nothing", 0, false);
     int durability;
+    int enchant = 0;
     double fortune = 1;
 
     public Tool(String itemType) {

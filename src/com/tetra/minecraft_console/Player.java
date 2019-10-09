@@ -5,6 +5,10 @@ import java.util.Scanner;
 import static com.tetra.minecraft_console.Main.lang;
 
 public class Player implements java.io.Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     String Name;
 
     public Player(String playerName) {
@@ -150,7 +154,7 @@ public class Player implements java.io.Serializable {
 
         for (int i = 1; i <= total; i = i + 3) {
             try {
-                Thread.sleep(100);
+                Thread.sleep(20);
                 Sys.printProgressBar(startTime, total, i);
             } catch (InterruptedException e) {
             }
@@ -178,5 +182,32 @@ public class Player implements java.io.Serializable {
         //FirstOccurrence of woodplanks (need 2 planks) to make 4* woodstick
         //FirstOccurrence of diamond and woodsticks (need 3 diamonds and 2 woodstick)
         //clearSlots
+    }
+    
+    /*  Increments FavoriteTool.enchant if lower than 5.
+    *   Augments FavoriteTool.fortune
+    *   Requires LapisLazuli
+    */
+    void Enchant(){
+        if (FavoriteTool.enchant < 4){
+            if(inv.setCurrentSlotToSameItemType(new Item("lapislazuli", 0, false))) {
+                if(inv.items[inv.currentSlot].getAmount() >= 32) {
+                    inv.addAmount(new Item("lapislazuli", 0, false), -32);
+                    FavoriteTool.fortune = FavoriteTool.fortune * 1.75;
+                    FavoriteTool.enchant++;
+                    System.out.println(lang.Messages.getString("enchant_done"));
+
+                    Object[] enchant_done2_args = {FavoriteTool.item.getItemTypeForDisplay(), FavoriteTool.enchant + 1};
+                        String enchant_done2 = lang.getMessage("enchant_done2", enchant_done2_args);
+                        System.out.println(enchant_done2);
+                } else {
+                    System.out.println(lang.Messages.getString("enchant_notenoughlapis"));
+                }
+            } else {
+                System.out.println(lang.Messages.getString("enchant_nolapis"));
+            }
+        } else {
+            System.out.println(lang.Messages.getString("enchant_toolmax"));
+        }
     }
 }

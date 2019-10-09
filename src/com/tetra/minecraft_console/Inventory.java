@@ -3,6 +3,10 @@ package com.tetra.minecraft_console;
 import static com.tetra.minecraft_console.Main.lang;
 
 public class Inventory implements java.io.Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     Item[] items = new Item[36];
     int currentSlot = 0;
 
@@ -28,6 +32,10 @@ public class Inventory implements java.io.Serializable {
         currentSlot = 0;
         while (!items[currentSlot].isEmpty()) {
             ++currentSlot;
+            if (currentSlot == 35){
+                System.out.println("can't mine no more");
+                break;
+            }
         }
     }
 
@@ -75,24 +83,29 @@ public class Inventory implements java.io.Serializable {
             if (items[currentSlot].getAmount() + addingAmount > 64) {
                 //Testing if the current amount is already 64 if not adding the difference
                 if (!items[currentSlot].isFull()) {
-                    addingAmount = (items[currentSlot].getAmount() + addingAmount) - 64;
-                    items[currentSlot].setAmount(64);
-                    System.out.println("SLOT ITEMTYPE :: " + items[currentSlot].getItemType() +
-                            "  DISPLAY TYPE:: " + items[currentSlot].getItemTypeForDisplay());
-                    setCurrentSlotToFirstEmpty();
+                    for (; addingAmount > 64; addingAmount -=64){
+                        items[currentSlot].setAmount(64);
+                        setCurrentSlotToFirstEmpty();
+                        items[currentSlot] = new Item(item.getItemType(), 0, item.isBlock);
+                    }
                     items[currentSlot] = new Item(item.getItemType(), addingAmount, item.isBlock);
                 } else { // Slot is already full
                     setCurrentSlotToFirstEmpty();
+                    items[currentSlot] = new Item(item.getItemType(), 0, item.isBlock);
+                    for (; addingAmount > 64; addingAmount -=64){
+                        items[currentSlot].setAmount(64);
+                        setCurrentSlotToFirstEmpty();
+                        items[currentSlot] = new Item(item.getItemType(), 0, item.isBlock);
+                    }
                     items[currentSlot] = new Item(item.getItemType(), addingAmount, item.isBlock);
                 }
             } else {
-//                System.out.println("SLOT ITEMTYPE :: " + items[currentSlot].getItemType() +
-//                        "  DISPLAY TYPE:: " + items[currentSlot].getItemTypeForDisplay());
                 items[currentSlot].setAmount(items[currentSlot].getAmount() + addingAmount);
             }
         } else {
             if (FirstOccurrence(item) == -1) {
                 setCurrentSlotToFirstEmpty();
+                
                 items[currentSlot] = new Item(item.getItemType(), addingAmount, item.isBlock);
             }
         }
