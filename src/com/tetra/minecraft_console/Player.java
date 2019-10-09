@@ -24,15 +24,19 @@ public class Player implements java.io.Serializable {
 
 
     void PickABlock() {
-        if (!inv.items[inv.currentSlot].getItemType().equals("dirt")) {
-            this.inv.setCurrentSlotToFirstEmpty();
-            inv.items[inv.currentSlot].resetItem("dirt", 0, true);
-        }
+        // if (!inv.items[inv.currentSlot].getItemType().equals("dirt")) {
+        //     if(!inv.setCurrentSlotToSameItemType(new Item("dirt", 0, true))){
+        //         this.inv.setCurrentSlotToFirstEmpty();
+        //         inv.items[inv.currentSlot].resetItem("dirt", 0, true);
+        //     }
+            
+        // }
+        inv.addAmount(new Item("dirt", 0, true), 1);
+
         Object[] pick_a_block_args = {inv.items[inv.currentSlot].getItemTypeForDisplay()};
         String pick_a_block = lang.getMessage("pick_a_block", pick_a_block_args);
         System.out.println(pick_a_block);
 
-        inv.addAmount(inv.items[inv.currentSlot], 1);
 
         Object[] now_have_args = {inv.items[inv.currentSlot].getAmount()};
         String now_have = lang.getMessage("now_have", now_have_args);
@@ -99,10 +103,12 @@ public class Player implements java.io.Serializable {
     }
 
     void Regen() {
-        this.Health += 3;
+        if(Health <= 17){
+            this.Health += 3;
         Object[] regen_args = {Health};
         String regen = lang.getMessage("regen", regen_args);
         System.out.println(regen);
+        }
     }
 
     void TellMobEncountered() {

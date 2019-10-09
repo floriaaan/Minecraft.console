@@ -11,7 +11,7 @@ public class Monster {
             lang.Messages.getString("spider"),
             lang.Messages.getString("creeper")};
     int mobHealth = 10;
-    double mobStrenght = 3;
+    int mobStrenght = 3;
     String mobType = "";
 
     Random r = new Random();
@@ -20,6 +20,16 @@ public class Monster {
 
     public Monster(Environnement environnement) {
         mobType = mobList[random];
+        if (mobType.equals(lang.Messages.getString("skeleton"))) {
+            mobHealth = 7;
+            mobStrenght = 5;
+        } else if (mobType.equals(lang.Messages.getString("creeper"))) {
+            mobHealth = 2;
+            mobStrenght = 10;
+        }
+
+
+
         if (!environnement.isDay) {
             mobStrenght += 4;
         }
@@ -30,7 +40,7 @@ public class Monster {
 
 
     void hitThePlayer(Player P) {
-        if (P.Health >= this.mobStrenght) {
+        if (P.Health > this.mobStrenght) {
             P.Health -= mobStrenght;
 
             Object[] hit_the_player_args = {mobType, mobStrenght};
@@ -85,5 +95,31 @@ public class Monster {
 
 
         }
+    }
+
+    void Combat(Player P) {
+        Random r = new Random();
+        int random = r.nextInt(100);
+        if (random > 50) {
+            while (mobHealth > 0 && P.Health > 0) {
+                if (mobHealth > 0) {
+                    hitThePlayer(P);
+                }
+                if (P.Health > 0) {
+                    hitByPlayer(P);
+                }                            
+            }
+        } else {
+            while (mobHealth > 0 && P.Health > 0) {
+                if (P.Health > 0) {
+                    hitByPlayer(P);
+                }
+                if (mobHealth > 0) {
+                    hitThePlayer(P);
+                }
+                                           
+            }
+        }
+
     }
 }
