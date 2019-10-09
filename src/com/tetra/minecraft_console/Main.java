@@ -39,7 +39,6 @@ public class Main {
                     P.PickABlock();
                    if (Evenement.MobApparition(E)) {
                         Monster mob = new Monster(E);
-                        //while ???
                         while (mob.mobHealth > 0 && P.Health > 0) {
                             if (mob.mobHealth > 0) {
                                 mob.hitThePlayer(P);
