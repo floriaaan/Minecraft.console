@@ -10,6 +10,7 @@ public class Player implements java.io.Serializable {
      */
     private static final long serialVersionUID = 1L;
     String Name;
+    double gameVersion = 0.1;
 
     public Player(String playerName) {
         Name = playerName;
@@ -21,6 +22,7 @@ public class Player implements java.io.Serializable {
     double Strength = Exp * 0.5 + 5;
     boolean ChosenOne = Evenement.ChosenOne();
     Tool FavoriteTool = new Tool("Hand");
+    Environnement Env = new Environnement();
 
 
     void PickABlock() {
@@ -117,7 +119,7 @@ public class Player implements java.io.Serializable {
 
     void CutTrees(Tool tool) {
         int WoodFortuneAmount = (int) (64 * FavoriteTool.fortune) ;
-        inv.addAmount(new Item("wood_log", 0, true), WoodFortuneAmount);
+        inv.addAmount(new Item(Env.currBiome.woodType, 0, true), WoodFortuneAmount);
 
         long total = 235;
         long startTime = System.currentTimeMillis();

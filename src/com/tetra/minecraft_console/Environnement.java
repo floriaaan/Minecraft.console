@@ -4,29 +4,49 @@ import java.util.Random;
 
 import static com.tetra.minecraft_console.Main.lang;
 
-public class Environnement {
+public class Environnement implements java.io.Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     boolean isDay;
     boolean isSunny;
 
     Random r = new Random();
-    int random = r.nextInt(100);
+    int weatherRand = r.nextInt(100);
+    String[] biomeList = {"oak_forest", "birch_forest"};
+
+    int biomeRand = r.nextInt(biomeList.length);
+
+    Biome currBiome = new Biome (biomeList[biomeRand]);
+    
 
     public Environnement() {
-        isSunny = random <= 50;
-        isDay = random <= 70;
+        isSunny = weatherRand <= 50;
+        isDay = weatherRand <= 70;
     }
 
     void tellWeather() {
 
         if (isSunny) {
-            System.out.println(lang.Messages.getString("is_sunny"));
+            System.out.println("\t" + lang.Messages.getString("is_sunny"));
         } else {
-            System.out.println(lang.Messages.getString("is_rainy"));
+            System.out.println("\t" + lang.Messages.getString("is_rainy"));
         }
         if (isDay) {
-            System.out.println(lang.Messages.getString("is_day"));
+            System.out.println("\t" + lang.Messages.getString("is_day"));
         } else {
-            System.out.println(lang.Messages.getString("is_night"));
+            System.out.println("\t" + lang.Messages.getString("is_night"));
         }
+    }
+
+    void changeBiome() {
+        biomeRand = r.nextInt(biomeList.length);
+        currBiome = new Biome (biomeList[biomeRand]);
+    }
+    void changeWeather(){
+        weatherRand = r.nextInt(100);
+        isSunny = weatherRand <= 50;
+        isDay = weatherRand <= 70;
     }
 }

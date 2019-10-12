@@ -15,7 +15,7 @@ public class Monster {
     String mobType = "";
 
     Random r = new Random();
-    int random = r.nextInt(4);
+    int random = r.nextInt(mobList.length);
 
 
     public Monster(Environnement environnement) {

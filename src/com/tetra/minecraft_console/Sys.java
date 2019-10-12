@@ -106,7 +106,7 @@ public class Sys {
                     Player P = (Player) in.readObject();
                     in.close();
                     playerSaveFile.close();
-                    System.out.println(lang.Messages.getString("title_welcomeback"));
+                    System.out.println(lang.Messages.getString("\t" + "title_welcomeback"));
                     return P;
                 } catch (IOException | ClassNotFoundException i) {
                     i.printStackTrace();
