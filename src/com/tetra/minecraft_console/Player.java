@@ -105,11 +105,13 @@ public class Player implements java.io.Serializable {
     }
 
     void Regen() {
-        if(Health <= 17){
-            this.Health += 3;
-        Object[] regen_args = {Health};
-        String regen = lang.getMessage("regen", regen_args);
-        System.out.println(regen);
+        if(Health < 20){
+            this.Health += (20 - this.Health);
+            Object[] regen_args = {Health};
+                    String regen = lang.getMessage("regen", regen_args);
+                    System.out.println(regen);
+        } else {
+            // Health already full
         }
     }
 
@@ -121,19 +123,8 @@ public class Player implements java.io.Serializable {
         int WoodFortuneAmount = (int) (64 * FavoriteTool.fortune) ;
         inv.addAmount(new Item(Env.currBiome.woodType, 0, true), WoodFortuneAmount);
 
-        long total = 235;
-        long startTime = System.currentTimeMillis();
-
-        for (int i = 1; i <= total; i = i + 3) {
-            try {
-                Thread.sleep(50);
-                Sys.printProgressBar(startTime, total, i);
-            } catch (InterruptedException e) {
-            }
-
-        }
-
-        System.out.println();
+        Sys.forProgressBar(50);
+        
         System.out.println(lang.Messages.getString("cut_trees"));
         this.Exp += (WoodFortuneAmount / 10);
     }
@@ -157,20 +148,10 @@ public class Player implements java.io.Serializable {
         int EmeraldFortuneAmount = (int) (1 * FavoriteTool.fortune);
         inv.addAmount(new Item("emerald", 0, false), EmeraldFortuneAmount);
 
-        long total = 235;
-        long startTime = System.currentTimeMillis();
+        Sys.forProgressBar(20);
 
-        for (int i = 1; i <= total; i = i + 3) {
-            try {
-                Thread.sleep(20);
-                Sys.printProgressBar(startTime, total, i);
-            } catch (InterruptedException e) {
-            }
-
-        }
-        System.out.println();
         this.Exp += ((CobbleFortuneAmount / 8) + (DirtFortuneAmount / 4) + IronOreFortuneAmount + (GoldOreFortuneAmount * 1.5)
-                + (DiamondFortuneAmount * 2) + (EmeraldFortuneAmount * 4)) / 2;
+                 + (DiamondFortuneAmount * 2) + (EmeraldFortuneAmount * 4)) / 2;
         System.out.println(lang.Messages.getString("mine"));
     }
 

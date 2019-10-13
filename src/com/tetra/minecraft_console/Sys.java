@@ -35,6 +35,21 @@ public class Sys {
         System.out.print(string);
     }
 
+    static void forProgressBar(int delay) {
+        long total = 235;
+        long startTime = System.currentTimeMillis();
+
+        for (int i = 1; i <= total; i = i + 3) {
+            try {
+                Thread.sleep(delay);
+                Sys.printProgressBar(startTime, total, i);
+            } catch (InterruptedException e) {
+            }
+
+        }
+        System.out.println();
+    }
+
 
     static void saveGame(Player P){
         System.out.println(lang.Messages.getString("save"));
@@ -106,7 +121,7 @@ public class Sys {
                     Player P = (Player) in.readObject();
                     in.close();
                     playerSaveFile.close();
-                    System.out.println(lang.Messages.getString("\t" + "title_welcomeback"));
+                    System.out.println("\t" + lang.Messages.getString("title_welcomeback"));
                     return P;
                 } catch (IOException | ClassNotFoundException i) {
                     i.printStackTrace();

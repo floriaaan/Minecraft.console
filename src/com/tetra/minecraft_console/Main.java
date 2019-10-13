@@ -69,6 +69,13 @@ public class Main {
                     P.Env.currBiome.tellBiome();
                     break;
                 case 8:
+                    Monster mob = new Monster(P.Env);
+                    mob.Combat(P);
+                    break;
+                case 9:
+                    P.Regen();
+                    break;
+                case 20:
                     P.TellMobEncountered();
                     break;
                 case -1:
@@ -85,6 +92,8 @@ public class Main {
                     System.out.println("\t - " + lang.Messages.getString("help_5"));
                     System.out.println("\t - " + lang.Messages.getString("help_6"));
                     System.out.println("\t - " + lang.Messages.getString("help_7"));
+                    System.out.println("\t - " + lang.Messages.getString("help_8"));
+                    System.out.println("\t - " + lang.Messages.getString("help_9"));
                     System.out.println("\t - " + lang.Messages.getString("help_exit"));
                     break;
                 default:
@@ -112,6 +121,8 @@ public class Main {
         String help_5 = lang.Messages.getString("help_5").toLowerCase();
         String help_6 = lang.Messages.getString("help_6").toLowerCase();
         String help_7 = lang.Messages.getString("help_7").toLowerCase();
+        String help_8 = lang.Messages.getString("help_8").toLowerCase();
+        String help_9 = lang.Messages.getString("help_9").toLowerCase();
         String help_exit = lang.Messages.getString("help_exit").toLowerCase();
 
         if (instruction.equals(help_1) || instruction.equals("dcrire") 
@@ -129,6 +140,10 @@ public class Main {
             return 6;
         } else if (instruction.equals(help_7)) {
             return 7;
+        } else if (instruction.equals(help_8)) {
+            return 8;
+        } else if (instruction.equals(help_9)) {
+            return 9;
         } else if (instruction.equals(help_exit)) {
             return -1;
         } else if (instruction.equals("/help")) {
