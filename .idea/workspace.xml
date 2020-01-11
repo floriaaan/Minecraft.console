@@ -7,9 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/ConsoleInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/ConsoleInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Evenement.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Evenement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Inventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saves/Florian.ser" beforeDir="false" afterPath="$PROJECT_DIR$/saves/Florian.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/ConsoleInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/ConsoleInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Evenement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Evenement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,11 +68,17 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -70,24 +87,12 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Docs\DEV\Minecraft.console\src\com\tetra\minecraft_console\langs" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -111,6 +116,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -122,6 +139,8 @@
       <option name="presentableId" value="Default" />
       <updated>1568244058953</updated>
       <workItem from="1571985992513" duration="63000" />
+      <workItem from="1578748041508" duration="150000" />
+      <workItem from="1578748253990" duration="84000" />
     </task>
     <task id="LOCAL-00001" summary="Implementation of Instructions in game.">
       <created>1568280742666</created>
@@ -346,6 +365,28 @@
     <MESSAGE value="Included Normalize input&#10;-Debugged Windows input &quot;dcrire&quot; in french." />
     <MESSAGE value="Added Save/Load System" />
     <option name="LAST_COMMIT_MESSAGE" value="Added Save/Load System" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="860" y="29" key="CommitChangelistDialog2" timestamp="1578748510872">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="860" y="29" key="CommitChangelistDialog2/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578748510872" />
+    <state x="783" y="166" key="SettingsEditor" timestamp="1578748192261">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="783" y="166" key="SettingsEditor/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578748192261" />
+    <state x="872" y="250" key="Vcs.Push.Dialog.v2" timestamp="1578748523765">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="872" y="250" key="Vcs.Push.Dialog.v2/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578748523765" />
+    <state x="988" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1578748258097">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="988" y="349" key="com.intellij.ide.util.TipDialog/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578748258097" />
+    <state x="1087" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578748380601">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1087" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578748380601" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Minecraft_console$Main.ic" NAME="Main Coverage Results" MODIFIED="1568278809439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
