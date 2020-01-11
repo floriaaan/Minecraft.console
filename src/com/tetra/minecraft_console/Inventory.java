@@ -53,7 +53,6 @@ public class Inventory implements java.io.Serializable {
         return true;
     }
 
-
     //Return the index of the First Occurrence of an Item (usage: Tool class)
     int FirstOccurrence(Item item) {
         for (int k = 0; k < 36; ++k) {

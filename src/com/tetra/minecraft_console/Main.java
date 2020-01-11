@@ -13,9 +13,9 @@ public class Main {
         }
         testVersion(P);
 
-        P.Env.changeWeather();
-        P.Env.tellWeather();
-        P.Env.currBiome.tellBiome();
+        P.env.changeWeather();
+        P.env.tellWeather();
+        P.env.currBiome.tellBiome();
 
         // Instructions
         ConsoleInterface.WaitForInstructions(P);

@@ -4,13 +4,13 @@ import java.util.Random;
 
 public class Evenement {
 
-    public static boolean MobApparition(Environnement e) {
+    public static boolean mobApparition(Environnement e) {
         Random r = new Random();
         int random = r.nextInt(100);
         return random > 80;
     }
 
-    public static boolean ChosenOne() {
+    public static boolean chosenOne() {
         Random r = new Random();
         int random = r.nextInt(100);
         return random > 90;

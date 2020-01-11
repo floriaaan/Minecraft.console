@@ -16,13 +16,15 @@ public class Player implements java.io.Serializable {
         Name = playerName;
     }
 
-    Inventory inv = new Inventory();
     int Health = 20;
     double Exp = 0;
     double Strength = Exp * 0.5 + 5;
-    boolean ChosenOne = Evenement.ChosenOne();
-    Tool FavoriteTool = new Tool("Hand");
-    Environnement Env = new Environnement();
+
+    Inventory inv = new Inventory();
+    boolean chosenOne = Evenement.chosenOne();
+    Tool favoriteTool = new Tool("Hand");
+    Environnement env = new Environnement();
+    Achievements ach = new Achievements();
 
 
     void PickABlock() {
@@ -120,8 +122,8 @@ public class Player implements java.io.Serializable {
     }
 
     void CutTrees(Tool tool) {
-        int WoodFortuneAmount = (int) (64 * FavoriteTool.fortune) ;
-        inv.addAmount(new Item(Env.currBiome.woodType, 0, true), WoodFortuneAmount);
+        int WoodFortuneAmount = (int) (64 * favoriteTool.fortune) ;
+        inv.addAmount(new Item(env.currBiome.woodType, 0, true), WoodFortuneAmount);
 
         Sys.forProgressBar(50);
         
@@ -131,21 +133,21 @@ public class Player implements java.io.Serializable {
 
     void Mine(Tool tool) {
         
-        int CobbleFortuneAmount = (int) (64 * FavoriteTool.fortune);
+        int CobbleFortuneAmount = (int) (64 * favoriteTool.fortune);
         inv.addAmount(new Item("cobblestone", 0, true), CobbleFortuneAmount);
-        int DirtFortuneAmount = (int) (32 * FavoriteTool.fortune);
+        int DirtFortuneAmount = (int) (32 * favoriteTool.fortune);
         inv.addAmount(new Item("dirt", 0, true), DirtFortuneAmount);
-        int CoalFortuneAmount = (int) (16 * FavoriteTool.fortune);
+        int CoalFortuneAmount = (int) (16 * favoriteTool.fortune);
         inv.addAmount(new Item("coal", 0, false), CoalFortuneAmount);
-        int IronOreFortuneAmount = (int) (8 * FavoriteTool.fortune);
+        int IronOreFortuneAmount = (int) (8 * favoriteTool.fortune);
         inv.addAmount(new Item("iron_ore", 0, true), IronOreFortuneAmount);
-        int GoldOreFortuneAmount = (int) (4 * FavoriteTool.fortune);
+        int GoldOreFortuneAmount = (int) (4 * favoriteTool.fortune);
         inv.addAmount(new Item("gold_ore", 0, true), GoldOreFortuneAmount);
-        int LapisFortuneAmount = (int) (24 * FavoriteTool.fortune);
+        int LapisFortuneAmount = (int) (24 * favoriteTool.fortune);
         inv.addAmount(new Item("lapislazuli", 0, false), LapisFortuneAmount);
-        int DiamondFortuneAmount = (int) (2 * FavoriteTool.fortune);
+        int DiamondFortuneAmount = (int) (2 * favoriteTool.fortune);
         inv.addAmount(new Item("diamond", 0, false), DiamondFortuneAmount);
-        int EmeraldFortuneAmount = (int) (1 * FavoriteTool.fortune);
+        int EmeraldFortuneAmount = (int) (1 * favoriteTool.fortune);
         inv.addAmount(new Item("emerald", 0, false), EmeraldFortuneAmount);
 
         Sys.forProgressBar(20);
@@ -160,8 +162,8 @@ public class Player implements java.io.Serializable {
         if (index < 0) {
             //Can't Equip
         } else {
-            this.FavoriteTool.copy("diamond_pickaxe", 1, false);
-            this.FavoriteTool.updateDurability();
+            this.favoriteTool.copy("diamond_pickaxe", 1, false);
+            this.favoriteTool.updateDurability();
             this.inv.clearSlot(index);
         }
     }
@@ -178,15 +180,15 @@ public class Player implements java.io.Serializable {
     *   Requires LapisLazuli
     */
     void Enchant(){
-        if (FavoriteTool.enchant < 4){
+        if (favoriteTool.enchant < 4){
             if(inv.setCurrentSlotToSameItemType(new Item("lapislazuli", 0, false))) {
                 if(inv.items[inv.currentSlot].getAmount() >= 32) {
                     inv.addAmount(new Item("lapislazuli", 0, false), -32);
-                    FavoriteTool.fortune = FavoriteTool.fortune * 1.75;
-                    FavoriteTool.enchant++;
+                    favoriteTool.fortune = favoriteTool.fortune * 1.75;
+                    favoriteTool.enchant++;
                     System.out.println(lang.Messages.getString("enchant_done"));
 
-                    Object[] enchant_done2_args = {FavoriteTool.item.getItemTypeForDisplay(), FavoriteTool.enchant + 1};
+                    Object[] enchant_done2_args = {favoriteTool.item.getItemTypeForDisplay(), favoriteTool.enchant + 1};
                         String enchant_done2 = lang.getMessage("enchant_done2", enchant_done2_args);
                         System.out.println(enchant_done2);
                 } else {

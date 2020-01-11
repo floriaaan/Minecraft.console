@@ -1,2 +1,13 @@
 /out/
 /.idea/
+.vscode/
+saves/
+/dist/
+bin/
+.classpath
+.project
+IntelliJ.iml
+Minecraft.console.code-workspace
+Minecraft.console.eml
+Minecraft.console.iml
+Minecraft.console.userlibraries

@@ -22,35 +22,35 @@ public class ConsoleInterface {
                     break;
                 case 2:
                     P.PickABlock();
-                   if (Evenement.MobApparition(P.Env)) {
-                        Monster mob = new Monster(P.Env);
+                   if (Evenement.mobApparition(P.env)) {
+                        Monster mob = new Monster(P.env);
                         mob.Combat(P);
                         P.Regen();
                    }
                     break;
                 case 3:
                     P.PlaceABlock();
-                    if (Evenement.MobApparition(P.Env)) {
-                        Monster mob = new Monster(P.Env);
+                    if (Evenement.mobApparition(P.env)) {
+                        Monster mob = new Monster(P.env);
                         mob.Combat(P);
                         P.Regen();
                     }
                     break;
                 case 4:
-                    P.Mine(P.FavoriteTool);
+                    P.Mine(P.favoriteTool);
                     break;
                 case 5:
-                    P.CutTrees(P.FavoriteTool);
+                    P.CutTrees(P.favoriteTool);
                     break;
                 case 6:
                     P.Enchant();
                     break;
                 case 7:
-                    P.Env.changeBiome();
-                    P.Env.currBiome.tellBiome();
+                    P.env.changeBiome();
+                    P.env.currBiome.tellBiome();
                     break;
                 case 8:
-                    Monster mob = new Monster(P.Env);
+                    Monster mob = new Monster(P.env);
                     mob.Combat(P);
                     break;
                 case 9:
@@ -109,7 +109,8 @@ public class ConsoleInterface {
         String help_exit = lang.Messages.getString("help_exit").toLowerCase();
 
         if (instruction.equals(help_1) || instruction.equals("dcrire") 
-                                       || instruction.equals("d crire")) { //Due to Windows
+                                       || instruction.equals("d crire")
+                                       || instruction.equals("d")) { //Due to Windows
             return 1;
         } else if (instruction.equals(help_2) || instruction.equals(help_2.substring(0, 1).toLowerCase())) {
             return 2;
