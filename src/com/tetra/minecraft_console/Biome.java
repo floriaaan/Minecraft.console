@@ -12,10 +12,14 @@ public class Biome implements java.io.Serializable {
 
     public Biome(String name){
         BiomeName = name;
-        if(BiomeName.contains("oak")) {
+        if(name.contains("oak")) {
             woodType = "oak_log";
-        } else if (BiomeName.contains("birch")) {
+        } else if (name.contains("birch")) {
             woodType = "birch_log";
+        } else if (name.contains("roofed")) {
+            woodType = "dark_oak_log";
+        } else {
+            woodType = "oak_log";
         }
         
     }

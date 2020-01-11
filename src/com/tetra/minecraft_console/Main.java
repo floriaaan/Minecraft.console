@@ -22,7 +22,7 @@ public class Main {
 
     }
 
-    
+
 
     static void testVersion(Player P) {
         try{
@@ -34,5 +34,5 @@ public class Main {
             i.printStackTrace();
         }
     }
-        
+
 }

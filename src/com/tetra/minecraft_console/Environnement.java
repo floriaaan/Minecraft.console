@@ -14,7 +14,7 @@ public class Environnement implements java.io.Serializable {
 
     Random r = new Random();
     int weatherRand = r.nextInt(100);
-    String[] biomeList = {"oak_forest", "birch_forest"};
+    String[] biomeList = {"oak_forest", "birch_forest", "mesa", "roofed_forest"};
 
     int biomeRand = r.nextInt(biomeList.length);
 

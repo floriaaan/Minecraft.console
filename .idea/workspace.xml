@@ -7,19 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/ConsoleInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/ConsoleInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Evenement.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Evenement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Inventory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/tetra/minecraft_console/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saves/Florian.ser" beforeDir="false" afterPath="$PROJECT_DIR$/saves/Florian.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/ConsoleInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/ConsoleInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Evenement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Evenement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Biome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Biome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Environnement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Environnement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_en_US.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_fr_FR.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_fr_FR.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +57,9 @@
     <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/com/tetra/minecraft_console/Biome.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -84,9 +83,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -96,9 +95,10 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-12.0.1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.tetra.minecraft_console.Main" />
       <module name="Minecraft.console" />
-      <option name="VM_PARAMETERS" value="-Duser.country=de" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.tetra.minecraft_console.*" />
@@ -141,6 +141,8 @@
       <workItem from="1571985992513" duration="63000" />
       <workItem from="1578748041508" duration="150000" />
       <workItem from="1578748253990" duration="84000" />
+      <workItem from="1578766212844" duration="354000" />
+      <workItem from="1578766617920" duration="956000" />
     </task>
     <task id="LOCAL-00001" summary="Implementation of Instructions in game.">
       <created>1568280742666</created>
@@ -367,26 +369,58 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added Save/Load System" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="734" y="176" width="1092" height="704" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578766793272">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="734" y="176" width="1092" height="704" key="#com.intellij.execution.impl.EditConfigurationsDialog/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578766793272" />
+    <state x="1009" y="313" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1578766788752">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1009" y="313" key="#com.intellij.ide.util.TreeClassChooserDialog/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578766788752" />
     <state x="860" y="29" key="CommitChangelistDialog2" timestamp="1578748510872">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="860" y="29" key="CommitChangelistDialog2/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578748510872" />
-    <state x="783" y="166" key="SettingsEditor" timestamp="1578748192261">
+    <state x="1083" y="333" key="FileChooserDialogImpl" timestamp="1578766495410">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="783" y="166" key="SettingsEditor/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578748192261" />
+    <state x="1083" y="333" key="FileChooserDialogImpl/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578766495410" />
+    <state width="2517" height="261" key="GridCell.Tab.0.bottom" timestamp="1578767595952">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="261" key="GridCell.Tab.0.bottom/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578767595952" />
+    <state width="2517" height="261" key="GridCell.Tab.0.center" timestamp="1578767595952">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="261" key="GridCell.Tab.0.center/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578767595952" />
+    <state width="2517" height="261" key="GridCell.Tab.0.left" timestamp="1578767595952">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="261" key="GridCell.Tab.0.left/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578767595952" />
+    <state width="2517" height="261" key="GridCell.Tab.0.right" timestamp="1578767595952">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="2517" height="261" key="GridCell.Tab.0.right/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578767595952" />
+    <state x="783" y="166" key="SettingsEditor" timestamp="1578766745870">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="783" y="166" key="SettingsEditor/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578766745870" />
     <state x="872" y="250" key="Vcs.Push.Dialog.v2" timestamp="1578748523765">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="872" y="250" key="Vcs.Push.Dialog.v2/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578748523765" />
-    <state x="988" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1578748258097">
+    <state x="988" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1578766617700">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="988" y="349" key="com.intellij.ide.util.TipDialog/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578748258097" />
+    <state x="988" y="349" key="com.intellij.ide.util.TipDialog/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578766617700" />
     <state x="1087" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578748380601">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1087" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578748380601" />
+    <state x="966" y="94" width="627" height="852" key="find.popup" timestamp="1578766800899">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="966" y="94" width="627" height="852" key="find.popup/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578766800899" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Minecraft_console$Main.ic" NAME="Main Coverage Results" MODIFIED="1568278809439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

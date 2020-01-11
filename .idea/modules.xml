@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Minecraft.console.iml" filepath="$PROJECT_DIR$/Minecraft.console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Minecraft.console.iml" filepath="$PROJECT_DIR$/.idea/Minecraft.console.iml" />
     </modules>
   </component>
 </project>
