@@ -18,6 +18,8 @@ public class Biome implements java.io.Serializable {
             woodType = "birch_log";
         } else if (name.contains("roofed")) {
             woodType = "dark_oak_log";
+        } else if (name.contains("mesa")) {
+            woodType = "acacia_log";
         } else {
             woodType = "oak_log";
         }
