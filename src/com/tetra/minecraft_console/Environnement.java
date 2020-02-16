@@ -14,12 +14,11 @@ public class Environnement implements java.io.Serializable {
 
     Random r = new Random();
     int weatherRand = r.nextInt(100);
-    String[] biomeList = {"oak_forest", "birch_forest", "mesa", "roofed_forest"};
 
-    int biomeRand = r.nextInt(biomeList.length);
 
-    Biome currBiome = new Biome (biomeList[biomeRand]);
-    
+    Dimension dimension = new Dimension();
+
+
 
     public Environnement() {
         isSunny = weatherRand <= 50;
@@ -40,10 +39,7 @@ public class Environnement implements java.io.Serializable {
         }
     }
 
-    void changeBiome() {
-        biomeRand = r.nextInt(biomeList.length);
-        currBiome = new Biome (biomeList[biomeRand]);
-    }
+
     void changeWeather(){
         weatherRand = r.nextInt(100);
         isSunny = weatherRand <= 50;

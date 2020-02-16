@@ -49,7 +49,7 @@ public class Monster {
 
             Object[] hit_the_player_hp_remaining_args = {P.Health};
             String hit_the_player_hp_remaining = lang.getMessage("hit_the_player_hp_remaining", hit_the_player_hp_remaining_args);
-            System.out.println(hit_the_player_hp_remaining);
+            System.out.println("\t" + hit_the_player_hp_remaining);
 
         } else {
             P.Health = 0;
@@ -57,8 +57,7 @@ public class Monster {
             Scanner I = new Scanner(System.in);
             String respawnChoice = I.nextLine();
             if (respawnChoice.equals("Yes")) {
-                P.Health = 20;
-                P.Exp = 0;
+                P = new Player(P.Name);
                 System.out.println(lang.Messages.getString("hit_the_player_respawn_yes"));
 
             } else {
@@ -78,7 +77,7 @@ public class Monster {
 
             Object[] hit_by_player_hp_remaining_args = {mobHealth};
             String hit_by_player_hp_remaining = lang.getMessage("hit_by_player_hp_remaining", hit_by_player_hp_remaining_args);
-            System.out.println(hit_by_player_hp_remaining);
+            System.out.println("\t" + hit_by_player_hp_remaining);
         } else {
             this.mobHealth = 0;
 

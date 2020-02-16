@@ -15,7 +15,7 @@ public class Main {
 
         P.env.changeWeather();
         P.env.tellWeather();
-        P.env.currBiome.tellBiome();
+        P.env.dimension.biome.tellBiome();
 
         // Instructions
         ConsoleInterface.WaitForInstructions(P);

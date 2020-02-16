@@ -33,7 +33,7 @@ public class Player implements java.io.Serializable {
         //         this.inv.setCurrentSlotToFirstEmpty();
         //         inv.items[inv.currentSlot].resetItem("dirt", 0, true);
         //     }
-            
+
         // }
         inv.addAmount(new Item("dirt", 0, true), 1);
 
@@ -107,11 +107,11 @@ public class Player implements java.io.Serializable {
     }
 
     void Regen() {
-        if(Health < 20){
+        if (Health < 20) {
             this.Health += (20 - this.Health);
             Object[] regen_args = {Health};
-                    String regen = lang.getMessage("regen", regen_args);
-                    System.out.println(regen);
+            String regen = lang.getMessage("regen", regen_args);
+            System.out.println(regen);
         } else {
             // Health already full
         }
@@ -122,39 +122,43 @@ public class Player implements java.io.Serializable {
     }
 
     void CutTrees(Tool tool) {
-        int WoodFortuneAmount = (int) (64 * favoriteTool.fortune) ;
-        inv.addAmount(new Item(env.currBiome.woodType, 0, true), WoodFortuneAmount);
+        int WoodFortuneAmount = (int) (64 * favoriteTool.fortune);
+        inv.addAmount(new Item(env.dimension.biome.woodType, 0, true), WoodFortuneAmount);
 
         Sys.forProgressBar(50);
-        
+
         System.out.println(lang.Messages.getString("cut_trees"));
         this.Exp += (WoodFortuneAmount / 10);
     }
 
-    void Mine(Tool tool) {
-        
-        int CobbleFortuneAmount = (int) (64 * favoriteTool.fortune);
-        inv.addAmount(new Item("cobblestone", 0, true), CobbleFortuneAmount);
-        int DirtFortuneAmount = (int) (32 * favoriteTool.fortune);
-        inv.addAmount(new Item("dirt", 0, true), DirtFortuneAmount);
-        int CoalFortuneAmount = (int) (16 * favoriteTool.fortune);
-        inv.addAmount(new Item("coal", 0, false), CoalFortuneAmount);
-        int IronOreFortuneAmount = (int) (8 * favoriteTool.fortune);
-        inv.addAmount(new Item("iron_ore", 0, true), IronOreFortuneAmount);
-        int GoldOreFortuneAmount = (int) (4 * favoriteTool.fortune);
-        inv.addAmount(new Item("gold_ore", 0, true), GoldOreFortuneAmount);
-        int LapisFortuneAmount = (int) (24 * favoriteTool.fortune);
-        inv.addAmount(new Item("lapislazuli", 0, false), LapisFortuneAmount);
-        int DiamondFortuneAmount = (int) (2 * favoriteTool.fortune);
-        inv.addAmount(new Item("diamond", 0, false), DiamondFortuneAmount);
-        int EmeraldFortuneAmount = (int) (1 * favoriteTool.fortune);
-        inv.addAmount(new Item("emerald", 0, false), EmeraldFortuneAmount);
+    void Mine() {
 
-        Sys.forProgressBar(20);
+        if (env.dimension.dimID == 0) {
+            int CobbleFortuneAmount = (int) (64 * favoriteTool.fortune);
+            inv.addAmount(new Item("cobblestone", 0, true), CobbleFortuneAmount);
+            int DirtFortuneAmount = (int) (32 * favoriteTool.fortune);
+            inv.addAmount(new Item("dirt", 0, true), DirtFortuneAmount);
+            int CoalFortuneAmount = (int) (16 * favoriteTool.fortune);
+            inv.addAmount(new Item("coal", 0, false), CoalFortuneAmount);
+            int IronOreFortuneAmount = (int) (8 * favoriteTool.fortune);
+            inv.addAmount(new Item("iron_ore", 0, true), IronOreFortuneAmount);
+            int GoldOreFortuneAmount = (int) (4 * favoriteTool.fortune);
+            inv.addAmount(new Item("gold_ore", 0, true), GoldOreFortuneAmount);
+            int LapisFortuneAmount = (int) (24 * favoriteTool.fortune);
+            inv.addAmount(new Item("lapislazuli", 0, false), LapisFortuneAmount);
+            int DiamondFortuneAmount = (int) (2 * favoriteTool.fortune);
+            inv.addAmount(new Item("diamond", 0, false), DiamondFortuneAmount);
+            int EmeraldFortuneAmount = (int) (1 * favoriteTool.fortune);
+            inv.addAmount(new Item("emerald", 0, false), EmeraldFortuneAmount);
 
-        this.Exp += ((CobbleFortuneAmount / 8) + (DirtFortuneAmount / 4) + IronOreFortuneAmount + (GoldOreFortuneAmount * 1.5)
-                 + (DiamondFortuneAmount * 2) + (EmeraldFortuneAmount * 4)) / 2;
-        System.out.println(lang.Messages.getString("mine"));
+            Sys.forProgressBar(20);
+
+            this.Exp += ((CobbleFortuneAmount / 8) + (DirtFortuneAmount / 4) + IronOreFortuneAmount + (GoldOreFortuneAmount * 1.5)
+                    + (DiamondFortuneAmount * 2) + (EmeraldFortuneAmount * 4)) / 2;
+            System.out.println(lang.Messages.getString("mine"));
+        } else {
+            //TODO: print other dim
+        }
     }
 
     void Equip() {
@@ -174,23 +178,23 @@ public class Player implements java.io.Serializable {
         //FirstOccurrence of diamond and woodsticks (need 3 diamonds and 2 woodstick)
         //clearSlots
     }
-    
+
     /*  Increments FavoriteTool.enchant if lower than 5.
-    *   Augments FavoriteTool.fortune
-    *   Requires LapisLazuli
-    */
-    void Enchant(){
-        if (favoriteTool.enchant < 4){
-            if(inv.setCurrentSlotToSameItemType(new Item("lapislazuli", 0, false))) {
-                if(inv.items[inv.currentSlot].getAmount() >= 32) {
+     *   Augments FavoriteTool.fortune
+     *   Requires LapisLazuli
+     */
+    void Enchant() {
+        if (favoriteTool.enchant < 4) {
+            if (inv.setCurrentSlotToSameItemType(new Item("lapislazuli", 0, false))) {
+                if (inv.items[inv.currentSlot].getAmount() >= 32) {
                     inv.addAmount(new Item("lapislazuli", 0, false), -32);
                     favoriteTool.fortune = favoriteTool.fortune * 1.75;
                     favoriteTool.enchant++;
                     System.out.println(lang.Messages.getString("enchant_done"));
 
                     Object[] enchant_done2_args = {favoriteTool.item.getItemTypeForDisplay(), favoriteTool.enchant + 1};
-                        String enchant_done2 = lang.getMessage("enchant_done2", enchant_done2_args);
-                        System.out.println(enchant_done2);
+                    String enchant_done2 = lang.getMessage("enchant_done2", enchant_done2_args);
+                    System.out.println(enchant_done2);
                 } else {
                     System.out.println(lang.Messages.getString("enchant_notenoughlapis"));
                 }

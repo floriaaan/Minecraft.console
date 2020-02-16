@@ -22,11 +22,11 @@ public class ConsoleInterface {
                     break;
                 case 2:
                     P.PickABlock();
-                   if (Evenement.mobApparition(P.env)) {
+                    if (Evenement.mobApparition(P.env)) {
                         Monster mob = new Monster(P.env);
                         mob.Combat(P);
                         P.Regen();
-                   }
+                    }
                     break;
                 case 3:
                     P.PlaceABlock();
@@ -37,7 +37,7 @@ public class ConsoleInterface {
                     }
                     break;
                 case 4:
-                    P.Mine(P.favoriteTool);
+                    P.Mine();
                     break;
                 case 5:
                     P.CutTrees(P.favoriteTool);
@@ -46,8 +46,8 @@ public class ConsoleInterface {
                     P.Enchant();
                     break;
                 case 7:
-                    P.env.changeBiome();
-                    P.env.currBiome.tellBiome();
+                    P.env.dimension.biome.changeBiome();
+                    P.env.dimension.biome.tellBiome();
                     break;
                 case 8:
                     Monster mob = new Monster(P.env);
@@ -77,16 +77,15 @@ public class ConsoleInterface {
     }
 
 
-    static void printHelp(int nbInstruction){
+    static void printHelp(int nbInstruction) {
         String help;
-        nbInstruction++;
+        int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1};
         for (int k = 1; k < nbInstruction; k++) {
             help = "help_" + k;
-            System.out.println("\t - " + lang.Messages.getString(help) 
-                                    + " (" + lang.Messages.getString(help).substring(0, 1).toLowerCase() + ")");
+            System.out.println("\t - " + lang.Messages.getString(help)
+                    + " (" + lang.Messages.getString(help).substring(0, indexForSubstring[k - 1]).toLowerCase() + ")");
         }
     }
-
 
 
     static int Instructions(String instruction) {
@@ -108,23 +107,23 @@ public class ConsoleInterface {
         String help_9 = lang.Messages.getString("help_9").toLowerCase();
         String help_exit = lang.Messages.getString("help_exit").toLowerCase();
 
-        if (instruction.equals(help_1) || instruction.equals("dcrire") 
-                                       || instruction.equals("d crire")
-                                       || instruction.equals("d")) { //Due to Windows
+        if (instruction.equals(help_1) || instruction.equals("dcrire")
+                || instruction.equals("d crire")
+                || instruction.equals("d")) { //Due to Windows
             return 1;
-        } else if (instruction.equals(help_2) || instruction.equals(help_2.substring(0, 1).toLowerCase())) {
+        } else if (instruction.equals(help_2) || instruction.equals(help_2.substring(0, 2).toLowerCase())) {
             return 2;
-        } else if (instruction.equals(help_3) || instruction.equals(help_3.substring(0, 1).toLowerCase())) {
+        } else if (instruction.equals(help_3) || instruction.equals(help_3.substring(0, 2).toLowerCase())) {
             return 3;
         } else if (instruction.equals(help_4) || instruction.equals(help_4.substring(0, 1).toLowerCase())) {
             return 4;
-        } else if (instruction.equals(help_5) || instruction.equals(help_5.substring(0, 1).toLowerCase())) {
+        } else if (instruction.equals(help_5) || instruction.equals(help_5.substring(0, 3).toLowerCase())) {
             return 5;
         } else if (instruction.equals(help_6) || instruction.equals(help_6.substring(0, 1).toLowerCase())) {
             return 6;
         } else if (instruction.equals(help_7) || instruction.equals(help_7.substring(0, 1).toLowerCase())) {
             return 7;
-        } else if (instruction.equals(help_8) || instruction.equals(help_8.substring(0, 1).toLowerCase())) {
+        } else if (instruction.equals(help_8) || instruction.equals(help_8.substring(0, 3).toLowerCase())) {
             return 8;
         } else if (instruction.equals(help_9) || instruction.equals(help_9.substring(0, 1).toLowerCase())) {
             return 9;
