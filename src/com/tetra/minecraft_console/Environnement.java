@@ -27,22 +27,32 @@ public class Environnement implements java.io.Serializable {
 
     void tellWeather() {
 
-        if (isSunny) {
-            System.out.println("\t" + lang.Messages.getString("is_sunny"));
+        if(dimension.getDimID() == 1) {
+            System.out.println("\t" + lang.Messages.getString("nether_weather"));
         } else {
-            System.out.println("\t" + lang.Messages.getString("is_rainy"));
-        }
-        if (isDay) {
-            System.out.println("\t" + lang.Messages.getString("is_day"));
-        } else {
-            System.out.println("\t" + lang.Messages.getString("is_night"));
+            if (isSunny) {
+                System.out.println("\t" + lang.Messages.getString("is_sunny"));
+            } else {
+                System.out.println("\t" + lang.Messages.getString("is_rainy"));
+            }
+            if (isDay) {
+                System.out.println("\t" + lang.Messages.getString("is_day"));
+            } else {
+                System.out.println("\t" + lang.Messages.getString("is_night"));
+            }
         }
     }
 
 
     void changeWeather(){
-        weatherRand = r.nextInt(100);
-        isSunny = weatherRand <= 50;
-        isDay = weatherRand <= 70;
+        if (dimension.getDimID() == 1) {
+            isSunny = true;
+            isDay = false;
+        } else {
+            weatherRand = r.nextInt(100);
+            isSunny = weatherRand <= 50;
+            isDay = weatherRand <= 70;
+        }
+
     }
 }
