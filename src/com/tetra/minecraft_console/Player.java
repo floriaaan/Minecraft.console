@@ -79,6 +79,10 @@ public class Player implements java.io.Serializable {
         String describe_exp = lang.getMessage("describe_exp", describe_exp_args);
         System.out.println(describe_exp);
 
+        env.tellWeather();
+        env.dimension.tellDimension();
+        env.dimension.biome.tellBiome();
+
         System.out.println(lang.Messages.getString("describe_inv"));
         Scanner I = new Scanner(System.in);
         String choice = I.nextLine();
@@ -222,6 +226,7 @@ public class Player implements java.io.Serializable {
             case 1:
                 if (inv.setCurrentSlotToSameItemType(new Item("obsidian", 0, true))) {
                     if (inv.items[inv.currentSlot].getAmount() >= 10) {
+                        inv.addAmount(new Item("obsidian", 0, true), -10);
                         env.dimension.setDimID(1);
                         System.out.println(lang.Messages.getString("portal_nether"));
                     } else {

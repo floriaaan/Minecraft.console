@@ -132,7 +132,7 @@ public class ConsoleInterface {
         } else if (instruction.equals(help_9) || instruction.equals(help_9.substring(0, 1).toLowerCase())) {
             return 9;
         } else if (instruction.equals(help_10) || instruction.equals(help_10.substring(0, 3).toLowerCase())) {
-            return 9;
+            return 10;
         } else if (instruction.equals(help_exit) || instruction.equals("x")) {
             return -1;
         } else if (instruction.equals("/help")) {

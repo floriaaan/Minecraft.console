@@ -2,7 +2,7 @@ package com.tetra.minecraft_console;
 
 import static com.tetra.minecraft_console.Main.lang;
 
-public class Dimension {
+public class Dimension implements java.io.Serializable {
 
     public Dimension() {
         setDimID(0);
