@@ -51,11 +51,11 @@ public class Sys {
     }
 
 
-    static void saveGame(Player P){
+    static void saveGame(Player P) {
         System.out.println(lang.Messages.getString("save"));
         Scanner Input = new Scanner(System.in);
         String Instruction = Input.nextLine();
-        if(Instruction.toLowerCase().equals(lang.Messages.getString("yes").toLowerCase())) {
+        if (Instruction.toLowerCase().equals(lang.Messages.getString("yes").toLowerCase())) {
             try {
 
                 new File(Sys.savePath).mkdirs();
@@ -89,15 +89,20 @@ public class Sys {
 
     static Player Load() { //TODO: if no saves folder, nullpointerexception
         System.out.println(lang.Messages.getString("title"));
-        System.out.println("\t" + lang.Messages.getString("title_newgame"));
-        System.out.println("\t" + lang.Messages.getString("title_load"));
-        System.out.println("\t" + lang.Messages.getString("help_exit"));
+        System.out.println("\t" + lang.Messages.getString("title_newgame")
+                + " (" + lang.Messages.getString("title_newgame").substring(0, 1).toLowerCase() + ')');
+        System.out.println("\t" + lang.Messages.getString("title_load")
+                + " (" + lang.Messages.getString("title_load").substring(0, 1).toLowerCase() + ')');
+        System.out.println("\t" + lang.Messages.getString("help_exit") + " (x)");
+
         Scanner Input = new Scanner(System.in);
         String Instruction = Input.nextLine();
-        if (Instruction.toLowerCase().equals(lang.Messages.getString("title_newgame").toLowerCase())) {
+        if (Instruction.toLowerCase().equals(lang.Messages.getString("title_newgame").toLowerCase())
+                || Instruction.toLowerCase().equals(lang.Messages.getString("title_newgame").substring(0, 1).toLowerCase())) {
             String PlayerName = AskForPlayerName();
             return new Player(PlayerName);
-        } else if (Instruction.toLowerCase().equals(lang.Messages.getString("title_load").toLowerCase())) {
+        } else if (Instruction.toLowerCase().equals(lang.Messages.getString("title_load").toLowerCase())
+                || Instruction.toLowerCase().equals(lang.Messages.getString("title_load").substring(0, 1).toLowerCase())) {
             File[] saves = new File(Sys.savePath).listFiles((dir, name) -> name.endsWith(".ser"));
             if (saves.length > 0) {
                 for (int k = 0; k < saves.length; k++) {
@@ -129,14 +134,14 @@ public class Sys {
             } else {
                 System.out.println(lang.Messages.getString("title_nosave"));
             }
-        } else if (Instruction.toLowerCase().equals(lang.Messages.getString("help_exit").toLowerCase())) {
+        } else if (Instruction.toLowerCase().equals(lang.Messages.getString("help_exit").toLowerCase())
+                || Instruction.toLowerCase().equals('x')) {
             System.out.println(lang.Messages.getString("bye"));
             System.exit(0);
         }
         System.out.println(lang.Messages.getString("NotExpectingThis"));
         return null;
     }
-
 
 
 }

@@ -4,19 +4,17 @@ import static com.tetra.minecraft_console.Main.lang;
 
 public class Dimension {
 
-
-    public int dimID;
-
-
-    String dimName;
-    String[] dimNameList = {"overworld", "nether", "aether", "moon", "end"};
-
-
-    Biome biome = new Biome();
-
     public Dimension() {
         setDimID(0);
     }
+
+    public int dimID;
+    String dimName;
+    String[] dimNameList = {"overworld", "nether", "aether", "moon", "end"};
+
+    Biome biome = new Biome(this.getDimID());
+
+
 
     public int getDimID() {
         return dimID;

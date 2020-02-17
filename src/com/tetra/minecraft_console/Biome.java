@@ -14,11 +14,11 @@ public class Biome implements java.io.Serializable {
     String BiomeName;
     String woodType = null;
 
-    String[] biomeList = {"oak_forest", "birch_forest", "mesa", "roofed_forest"};
+    String[] biomeListOverworld = {"oak_forest", "birch_forest", "mesa", "roofed_forest"};
 
 
-    public Biome() {
-        changeBiome();
+    public Biome(int dimID) {
+        changeBiome(dimID);
     }
 
     public String getBiomeForDisplay() {
@@ -31,20 +31,27 @@ public class Biome implements java.io.Serializable {
         System.out.println("\t" + tellbiome);
     }
 
-    void changeBiome() {
+    void changeBiome(int dimID) {
 
-        BiomeName = biomeList[(new Random()).nextInt(biomeList.length)];
-        if (BiomeName.contains("oak")) {
-            setWoodType("oak_log");
-        } else if (BiomeName.contains("birch")) {
-            setWoodType("birch_log");
-        } else if (BiomeName.contains("roofed")) {
-            setWoodType("dark_oak_log");
-        } else if (BiomeName.contains("mesa")) {
-            setWoodType("acacia_log");
+        if(dimID == 0) {
+            BiomeName = biomeListOverworld[(new Random()).nextInt(biomeListOverworld.length)];
+            if (BiomeName.contains("oak")) {
+                setWoodType("oak_log");
+            } else if (BiomeName.contains("birch")) {
+                setWoodType("birch_log");
+            } else if (BiomeName.contains("roofed")) {
+                setWoodType("dark_oak_log");
+            } else if (BiomeName.contains("mesa")) {
+                setWoodType("acacia_log");
+            } else {
+                setWoodType("oak_log");
+            }
+        } else if (dimID == 1) {
+            setWoodType("nether_log");
         } else {
             setWoodType("oak_log");
         }
+
     }
 
     public String getBiomeName() {

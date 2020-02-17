@@ -9,8 +9,8 @@ public class ConsoleInterface {
 
 
     static void WaitForInstructions(Player P) {
-        String PlayerWantsTo = null;
-        while (PlayerWantsTo != "Exit") {
+        String PlayerWantsTo = "";
+        while (!PlayerWantsTo.equals("Exit")) {
             System.out.println(lang.Messages.getString("wait_for_instructions"));
 
             Scanner I = new Scanner(System.in);
@@ -46,7 +46,7 @@ public class ConsoleInterface {
                     P.Enchant();
                     break;
                 case 7:
-                    P.env.dimension.biome.changeBiome();
+                    P.env.dimension.biome.changeBiome(P.env.dimension.dimID);
                     P.env.dimension.biome.tellBiome();
                     break;
                 case 8:
@@ -55,6 +55,9 @@ public class ConsoleInterface {
                     break;
                 case 9:
                     P.Regen();
+                    break;
+                case 10:
+                    P.MakePortal(1);
                     break;
                 case 20:
                     P.TellMobEncountered();
@@ -66,7 +69,7 @@ public class ConsoleInterface {
                     break;
                 case -2:
                     System.out.println(lang.Messages.getString("help_0"));
-                    printHelp(9);
+                    printHelp(10);
                     System.out.println("\t - " + lang.Messages.getString("help_exit") + "(x)");
                     break;
                 default:
@@ -79,7 +82,7 @@ public class ConsoleInterface {
 
     static void printHelp(int nbInstruction) {
         String help;
-        int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1};
+        int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1, 3};
         for (int k = 1; k < nbInstruction; k++) {
             help = "help_" + k;
             System.out.println("\t - " + lang.Messages.getString(help)
@@ -105,6 +108,7 @@ public class ConsoleInterface {
         String help_7 = lang.Messages.getString("help_7").toLowerCase();
         String help_8 = lang.Messages.getString("help_8").toLowerCase();
         String help_9 = lang.Messages.getString("help_9").toLowerCase();
+        String help_10 = lang.Messages.getString("help_10").toLowerCase();
         String help_exit = lang.Messages.getString("help_exit").toLowerCase();
 
         if (instruction.equals(help_1) || instruction.equals("dcrire")
@@ -126,6 +130,8 @@ public class ConsoleInterface {
         } else if (instruction.equals(help_8) || instruction.equals(help_8.substring(0, 3).toLowerCase())) {
             return 8;
         } else if (instruction.equals(help_9) || instruction.equals(help_9.substring(0, 1).toLowerCase())) {
+            return 9;
+        } else if (instruction.equals(help_10) || instruction.equals(help_10.substring(0, 3).toLowerCase())) {
             return 9;
         } else if (instruction.equals(help_exit) || instruction.equals("x")) {
             return -1;

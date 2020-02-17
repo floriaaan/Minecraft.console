@@ -134,28 +134,39 @@ public class Player implements java.io.Serializable {
     void Mine() {
 
         if (env.dimension.dimID == 0) {
-            int CobbleFortuneAmount = (int) (64 * favoriteTool.fortune);
-            inv.addAmount(new Item("cobblestone", 0, true), CobbleFortuneAmount);
-            int DirtFortuneAmount = (int) (32 * favoriteTool.fortune);
-            inv.addAmount(new Item("dirt", 0, true), DirtFortuneAmount);
+
+            inv.addAmount(new Item("cobblestone", 0, true), 64);
+            inv.addAmount(new Item("dirt", 0, true), 32);
+
             int CoalFortuneAmount = (int) (16 * favoriteTool.fortune);
             inv.addAmount(new Item("coal", 0, false), CoalFortuneAmount);
-            int IronOreFortuneAmount = (int) (8 * favoriteTool.fortune);
-            inv.addAmount(new Item("iron_ore", 0, true), IronOreFortuneAmount);
-            int GoldOreFortuneAmount = (int) (4 * favoriteTool.fortune);
-            inv.addAmount(new Item("gold_ore", 0, true), GoldOreFortuneAmount);
+
+            inv.addAmount(new Item("iron_ore", 0, true), 8);
+            inv.addAmount(new Item("gold_ore", 0, true), 4);
+
             int LapisFortuneAmount = (int) (24 * favoriteTool.fortune);
             inv.addAmount(new Item("lapislazuli", 0, false), LapisFortuneAmount);
+
             int DiamondFortuneAmount = (int) (2 * favoriteTool.fortune);
             inv.addAmount(new Item("diamond", 0, false), DiamondFortuneAmount);
+
             int EmeraldFortuneAmount = (int) (1 * favoriteTool.fortune);
             inv.addAmount(new Item("emerald", 0, false), EmeraldFortuneAmount);
 
+            inv.addAmount(new Item("obsidian", 0, true), 12);
+
             Sys.forProgressBar(20);
 
-            this.Exp += ((CobbleFortuneAmount / 8) + (DirtFortuneAmount / 4) + IronOreFortuneAmount + (GoldOreFortuneAmount * 1.5)
+            this.Exp += (24 + (4 * 1.5)
                     + (DiamondFortuneAmount * 2) + (EmeraldFortuneAmount * 4)) / 2;
             System.out.println(lang.Messages.getString("mine"));
+
+        } else if (env.dimension.dimID == 1) {
+            int QuartzFortuneAmount = (int) (64 * favoriteTool.fortune);
+            inv.addAmount(new Item("quartz", 0, false), QuartzFortuneAmount);
+
+            Sys.forProgressBar(10);
+            System.out.println(lang.Messages.getString("nether_mine"));
         } else {
             //TODO: print other dim
         }
@@ -203,6 +214,29 @@ public class Player implements java.io.Serializable {
             }
         } else {
             System.out.println(lang.Messages.getString("enchant_toolmax"));
+        }
+    }
+
+    void MakePortal(int dimID) {
+        switch (dimID) {
+            case 1:
+                if (inv.setCurrentSlotToSameItemType(new Item("obsidian", 0, true))) {
+                    if (inv.items[inv.currentSlot].getAmount() >= 10) {
+                        env.dimension.setDimID(1);
+                        System.out.println(lang.Messages.getString("portal_nether"));
+                    } else {
+                        System.out.println(lang.Messages.getString("portal_notenoughobsidian"));
+                    }
+
+                } else {
+                    System.out.println(lang.Messages.getString("portal_noobsidian"));
+                }
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+
         }
     }
 }
