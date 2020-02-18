@@ -83,7 +83,7 @@ public class ConsoleInterface {
     static void printHelp(int nbInstruction) {
         String help;
         int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1, 3};
-        for (int k = 1; k < nbInstruction; k++) {
+        for (int k = 1; k <= nbInstruction; k++) {
             help = "help_" + k;
             System.out.println("\t - " + lang.Messages.getString(help)
                     + " (" + lang.Messages.getString(help).substring(0, indexForSubstring[k - 1]).toLowerCase() + ")");

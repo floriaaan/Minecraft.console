@@ -90,7 +90,7 @@ public class Player implements java.io.Serializable {
         if (choice.toLowerCase().equals(lang.Messages.getString("yes").toLowerCase())) {
 
             for (int k = 0; k < 36; k++) {
-                if (inv.items[k].getAmount() > 0) {
+                if (inv.items[k].getAmount() > 0 && !inv.items[k].getItemType().equals("nothing")) {
                     if (inv.items[k].isBlock) {
                         Object[] describe_currentSlot_args = {Name, inv.items[k].getAmount(), inv.items[k].getItemTypeForDisplay()};
                         String describe_currentSlot = lang.getMessage("describe_currentBlock", describe_currentSlot_args);
@@ -126,13 +126,18 @@ public class Player implements java.io.Serializable {
     }
 
     void CutTrees(Tool tool) {
-        int WoodFortuneAmount = (int) (64 * favoriteTool.fortune);
-        inv.addAmount(new Item(env.dimension.biome.woodType, 0, true), WoodFortuneAmount);
+        if(!env.dimension.biome.woodType.equals("nothing")) {
+            int WoodFortuneAmount = (int) (64 * favoriteTool.fortune);
+            inv.addAmount(new Item(env.dimension.biome.woodType, 0, true), WoodFortuneAmount);
 
-        Sys.forProgressBar(50);
+            Sys.forProgressBar(50);
 
-        System.out.println(lang.Messages.getString("cut_trees"));
-        this.Exp += (WoodFortuneAmount / 10);
+            System.out.println(lang.Messages.getString("cut_trees"));
+            this.Exp += (WoodFortuneAmount / 10);
+        } else {
+            System.out.println(lang.Messages.getString("cut_notreesinbiome"));
+        }
+
     }
 
     void Mine() {
@@ -181,7 +186,7 @@ public class Player implements java.io.Serializable {
         if (index < 0) {
             //Can't Equip
         } else {
-            this.favoriteTool.copy("diamond_pickaxe", 1, false);
+            this.favoriteTool.copy(new Item("diamond_pickaxe", 1, false));
             this.favoriteTool.updateDurability();
             this.inv.clearSlot(index);
         }

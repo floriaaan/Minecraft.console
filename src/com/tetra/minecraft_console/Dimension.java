@@ -23,6 +23,7 @@ public class Dimension implements java.io.Serializable {
     public void setDimID(int dimID) {
         this.dimID = dimID;
         setDimName();
+        biome.changeBiome(dimID);
     }
 
     public String getDimName() {

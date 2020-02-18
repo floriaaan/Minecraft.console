@@ -14,7 +14,8 @@ public class Biome implements java.io.Serializable {
     String BiomeName;
     String woodType = null;
 
-    String[] biomeListOverworld = {"oak_forest", "birch_forest", "mesa", "roofed_forest"};
+    String[] biomeListOverworld = {"plains", "tundra", "oak_forest", "birch_forest", "mesa", "roofed_forest"};
+    String[] biomeListNether = {"crimson_forest", "warded_forest", "soulsand_valley", "nether_waste"};
 
 
     public Biome(int dimID) {
@@ -33,7 +34,7 @@ public class Biome implements java.io.Serializable {
 
     void changeBiome(int dimID) {
 
-        if(dimID == 0) {
+        if (dimID == 0) {
             BiomeName = biomeListOverworld[(new Random()).nextInt(biomeListOverworld.length)];
             if (BiomeName.contains("oak")) {
                 setWoodType("oak_log");
@@ -47,7 +48,14 @@ public class Biome implements java.io.Serializable {
                 setWoodType("oak_log");
             }
         } else if (dimID == 1) {
-            setWoodType("nether_log");
+            BiomeName = biomeListNether[(new Random()).nextInt(biomeListNether.length)];
+            if (BiomeName.contains("crimson")){
+                setWoodType("crimson_log");
+            } else if (BiomeName.contains("warded")) {
+                setWoodType("warded_log");
+            } else {
+                setWoodType("nothing");
+            }
         } else {
             setWoodType("oak_log");
         }

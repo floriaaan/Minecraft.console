@@ -30,10 +30,10 @@ public class Tool implements java.io.Serializable {
         }
     }
 
-    void copy(String item_type, int amount, boolean is_block) {
-        item.setItemType(item_type);
-        item.setAmount(amount);
-        item.isBlock = is_block;
+    void copy(Item item) {
+        this.item.setItemType(item.getItemType());
+        this.item.setAmount(item.Amount);
+        this.item.isBlock = item.isBlock;
     }
 
     void updateDurability() {
