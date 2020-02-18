@@ -235,7 +235,7 @@ public class Player implements java.io.Serializable {
                 }
                 break;
             case 1:
-                if(env.dimension.getDimID() != 1) {
+                if (env.dimension.getDimID() != 1) {
                     if (!env.dimension.dimVisited.contains(1)) {
                         if (inv.setCurrentSlotToSameItemType(new Item("obsidian", 0, true))) {
                             if (inv.items[inv.currentSlot].getAmount() >= 10) {
@@ -260,6 +260,7 @@ public class Player implements java.io.Serializable {
                     }
                 } else {
                     //TODO: already nether
+                    System.out.println("\t" + lang.Messages.getString("portal_alreadynether"));
                 }
 
                 break;

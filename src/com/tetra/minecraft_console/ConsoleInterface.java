@@ -1,7 +1,7 @@
 package com.tetra.minecraft_console;
 
 import java.text.Normalizer;
-import java.util.Scanner;
+import java.util.*;
 
 import static com.tetra.minecraft_console.Main.lang;
 
@@ -84,64 +84,41 @@ public class ConsoleInterface {
 
 
     static void printHelp(int nbInstruction) {
-        String help;
         int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1, 3, 1};
         for (int k = 1; k <= nbInstruction; k++) {
-            help = "help_" + k;
-            System.out.println("\t - " + lang.Messages.getString(help)
-                    + " (" + lang.Messages.getString(help).substring(0, indexForSubstring[k - 1]).toLowerCase() + ")");
+            System.out.println("\t - " + lang.Messages.getString("help_" + k)
+                    + " (" + lang.Messages.getString("help_" + k).substring(0, indexForSubstring[k - 1]).toLowerCase() + ")");
         }
     }
 
 
-    static int Instructions(String instruction) { //TODO: Refactor with arrays
+    static int Instructions(String instruction) {
+        int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1, 3, 1};
         instruction = instruction.toLowerCase();
         instruction = Normalizer
                 .normalize(instruction, Normalizer.Form.NFD)
                 .replaceAll("[^\\p{ASCII}]", "");
+        List<String> helps = new ArrayList<String>();
+
         String help_1 = lang.Messages.getString("help_1").toLowerCase();
         help_1 = Normalizer
                 .normalize(help_1, Normalizer.Form.NFD)
                 .replaceAll("[^\\p{ASCII}]", "");
-        String help_2 = lang.Messages.getString("help_2").toLowerCase();
-        String help_3 = lang.Messages.getString("help_3").toLowerCase();
-        String help_4 = lang.Messages.getString("help_4").toLowerCase();
-        String help_5 = lang.Messages.getString("help_5").toLowerCase();
-        String help_6 = lang.Messages.getString("help_6").toLowerCase();
-        String help_7 = lang.Messages.getString("help_7").toLowerCase();
-        String help_8 = lang.Messages.getString("help_8").toLowerCase();
-        String help_9 = lang.Messages.getString("help_9").toLowerCase();
-        String help_10 = lang.Messages.getString("help_10").toLowerCase();
-        String help_11 = lang.Messages.getString("help_11").toLowerCase();
-        String help_exit = lang.Messages.getString("help_exit").toLowerCase();
+        helps.add(help_1);
 
-        if (instruction.equals(help_1) || instruction.equals("dcrire")
-                || instruction.equals("d crire")
-                || instruction.equals("d")) { //Due to Windows
-            return 1;
-        } else if (instruction.equals(help_2) || instruction.equals(help_2.substring(0, 2).toLowerCase())) {
-            return 2;
-        } else if (instruction.equals(help_3) || instruction.equals(help_3.substring(0, 2).toLowerCase())) {
-            return 3;
-        } else if (instruction.equals(help_4) || instruction.equals(help_4.substring(0, 1).toLowerCase())) {
-            return 4;
-        } else if (instruction.equals(help_5) || instruction.equals(help_5.substring(0, 3).toLowerCase())) {
-            return 5;
-        } else if (instruction.equals(help_6) || instruction.equals(help_6.substring(0, 1).toLowerCase())) {
-            return 6;
-        } else if (instruction.equals(help_7) || instruction.equals(help_7.substring(0, 1).toLowerCase())) {
-            return 7;
-        } else if (instruction.equals(help_8) || instruction.equals(help_8.substring(0, 3).toLowerCase())) {
-            return 8;
-        } else if (instruction.equals(help_9) || instruction.equals(help_9.substring(0, 1).toLowerCase())) {
-            return 9;
-        } else if (instruction.equals(help_10) || instruction.equals(help_10.substring(0, 3).toLowerCase())) {
-            return 10;
-        } else if (instruction.equals(help_11) || instruction.equals(help_11.substring(0, 3).toLowerCase())) {
-            return 11;
-        } else if (instruction.equals(help_exit) || instruction.equals("x")) {
-            return -1;
-        } else if (instruction.equals("/help")) {
+        for (int k = 2; k <= 11; k++) {
+            helps.add(lang.Messages.getString("help_" + k).toLowerCase());
+        }
+
+        helps.add(lang.Messages.getString("help_exit").toLowerCase());
+
+        for (int k = 0; k < 12; k++) {
+            if (instruction.equals(helps.get(k)) || instruction.equals(helps.get(k).substring(0, indexForSubstring[k]))) {
+                return k + 1;
+            }
+        }
+
+        if (instruction.equals("/help")) {
             return -2;
         } else {
             System.out.println("INSTRUCTION :: " + instruction);
