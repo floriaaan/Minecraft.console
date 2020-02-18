@@ -32,8 +32,8 @@ public class Inventory implements java.io.Serializable {
         currentSlot = 0;
         while (!items[currentSlot].isEmpty()) {
             ++currentSlot;
-            if (currentSlot == 35){
-                System.out.println("can't mine no more");
+            if (currentSlot == 35) {
+                System.out.println("\t" + "can't mine no more");
                 break;
             }
         }
@@ -47,7 +47,7 @@ public class Inventory implements java.io.Serializable {
         }
         if (currentSlot == 35) {
             currentSlot = 0;
-            System.out.println(lang.Messages.getString("nothing_in_inv"));
+            System.out.println("\t" + lang.Messages.getString("nothing_in_inv"));
             return false;
         }
         return true;
@@ -82,7 +82,7 @@ public class Inventory implements java.io.Serializable {
             if (items[currentSlot].getAmount() + addingAmount > 64) {
                 //Testing if the current amount is already 64 if not adding the difference
                 if (!items[currentSlot].isFull()) {
-                    for (; addingAmount > 64; addingAmount -=64){
+                    for (; addingAmount > 64; addingAmount -= 64) {
                         items[currentSlot].setAmount(64);
                         setCurrentSlotToFirstEmpty();
                         items[currentSlot] = new Item(item.getItemType(), 0, item.isBlock);
@@ -91,7 +91,7 @@ public class Inventory implements java.io.Serializable {
                 } else { // Slot is already full
                     setCurrentSlotToFirstEmpty();
                     items[currentSlot] = new Item(item.getItemType(), 0, item.isBlock);
-                    for (; addingAmount > 64; addingAmount -=64){
+                    for (; addingAmount > 64; addingAmount -= 64) {
                         items[currentSlot].setAmount(64);
                         setCurrentSlotToFirstEmpty();
                         items[currentSlot] = new Item(item.getItemType(), 0, item.isBlock);
@@ -104,11 +104,19 @@ public class Inventory implements java.io.Serializable {
         } else {
             if (FirstOccurrence(item) == -1) {
                 setCurrentSlotToFirstEmpty();
-                
+
                 items[currentSlot] = new Item(item.getItemType(), addingAmount, item.isBlock);
             }
         }
     }
 
-
+    boolean isInventoryEmpty() {
+        boolean rVal = true;
+        for (int k = 0; k < items.length; k++) {
+            if (!items[k].isEmpty()) {
+                rVal = false;
+            }
+        }
+        return rVal;
+    }
 }

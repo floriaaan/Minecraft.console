@@ -19,7 +19,7 @@ public class Item implements java.io.Serializable {
 
 
     boolean isEmpty() {
-        return (getAmount() == 0);
+        return (getAmount() == 0) || (getItemType().equals("nothing"));
     }
 
     boolean isFull() {

@@ -1,5 +1,8 @@
 package com.tetra.minecraft_console;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.tetra.minecraft_console.Main.lang;
 
 public class Dimension implements java.io.Serializable {
@@ -9,6 +12,8 @@ public class Dimension implements java.io.Serializable {
     }
 
     public int dimID;
+    public List<Integer> dimVisited = new ArrayList<Integer>();
+
     String dimName;
     String[] dimNameList = {"overworld", "nether", "aether", "moon", "end"};
 
@@ -41,6 +46,6 @@ public class Dimension implements java.io.Serializable {
     void tellDimension() {
         Object[] telldim_args = {getDimForDisplay()};
         String telldim = lang.getMessage("telldim", telldim_args);
-        System.out.println("\t" + telldim);
+        System.out.println("\t\t" + telldim);
     }
 }

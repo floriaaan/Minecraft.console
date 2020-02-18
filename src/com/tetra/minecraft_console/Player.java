@@ -94,15 +94,15 @@ public class Player implements java.io.Serializable {
                     if (inv.items[k].isBlock) {
                         Object[] describe_currentSlot_args = {Name, inv.items[k].getAmount(), inv.items[k].getItemTypeForDisplay()};
                         String describe_currentSlot = lang.getMessage("describe_currentBlock", describe_currentSlot_args);
-                        System.out.println(describe_currentSlot);
+                        System.out.println("\t\t - " + describe_currentSlot);
                     } else {
                         Object[] describe_currentSlot_args = {Name, inv.items[k].getAmount(), inv.items[k].getItemTypeForDisplay()};
                         String describe_currentSlot = lang.getMessage("describe_currentItem", describe_currentSlot_args);
-                        System.out.println(describe_currentSlot);
+                        System.out.println("\t\t - " + describe_currentSlot);
                     }
                 }
             }
-            if (inv.items[0].isEmpty()) {
+            if (inv.isInventoryEmpty()) {
                 System.out.println(lang.Messages.getString("nothing_in_inv"));
             }
         }
@@ -115,7 +115,7 @@ public class Player implements java.io.Serializable {
             this.Health += (20 - this.Health);
             Object[] regen_args = {Health};
             String regen = lang.getMessage("regen", regen_args);
-            System.out.println(regen);
+            System.out.println("\t" + regen);
         } else {
             // Health already full
         }
@@ -126,16 +126,16 @@ public class Player implements java.io.Serializable {
     }
 
     void CutTrees(Tool tool) {
-        if(!env.dimension.biome.woodType.equals("nothing")) {
+        if (!env.dimension.biome.woodType.equals("nothing")) {
             int WoodFortuneAmount = (int) (64 * favoriteTool.fortune);
             inv.addAmount(new Item(env.dimension.biome.woodType, 0, true), WoodFortuneAmount);
 
             Sys.forProgressBar(50);
 
-            System.out.println(lang.Messages.getString("cut_trees"));
+            System.out.println("\t" + lang.Messages.getString("cut_trees"));
             this.Exp += (WoodFortuneAmount / 10);
         } else {
-            System.out.println(lang.Messages.getString("cut_notreesinbiome"));
+            System.out.println("\t" + lang.Messages.getString("cut_notreesinbiome"));
         }
 
     }
@@ -168,14 +168,14 @@ public class Player implements java.io.Serializable {
 
             this.Exp += (24 + (4 * 1.5)
                     + (DiamondFortuneAmount * 2) + (EmeraldFortuneAmount * 4)) / 2;
-            System.out.println(lang.Messages.getString("mine"));
+            System.out.println("\t" + lang.Messages.getString("mine"));
 
         } else if (env.dimension.dimID == 1) {
             int QuartzFortuneAmount = (int) (64 * favoriteTool.fortune);
             inv.addAmount(new Item("quartz", 0, false), QuartzFortuneAmount);
 
             Sys.forProgressBar(10);
-            System.out.println(lang.Messages.getString("nether_mine"));
+            System.out.println(lang.Messages.getString("\t" + "nether_mine"));
         } else {
             //TODO: print other dim
         }
@@ -210,37 +210,58 @@ public class Player implements java.io.Serializable {
                     inv.addAmount(new Item("lapislazuli", 0, false), -32);
                     favoriteTool.fortune = favoriteTool.fortune * 1.75;
                     favoriteTool.enchant++;
-                    System.out.println(lang.Messages.getString("enchant_done"));
+                    System.out.println("\t" + lang.Messages.getString("enchant_done"));
 
                     Object[] enchant_done2_args = {favoriteTool.item.getItemTypeForDisplay(), favoriteTool.enchant + 1};
                     String enchant_done2 = lang.getMessage("enchant_done2", enchant_done2_args);
-                    System.out.println(enchant_done2);
+                    System.out.println("\t" + enchant_done2);
                 } else {
-                    System.out.println(lang.Messages.getString("enchant_notenoughlapis"));
+                    System.out.println("\t" + lang.Messages.getString("enchant_notenoughlapis"));
                 }
             } else {
-                System.out.println(lang.Messages.getString("enchant_nolapis"));
+                System.out.println("\t" + lang.Messages.getString("enchant_nolapis"));
             }
         } else {
-            System.out.println(lang.Messages.getString("enchant_toolmax"));
+            System.out.println("\t" + lang.Messages.getString("enchant_toolmax"));
         }
     }
 
     void MakePortal(int dimID) {
         switch (dimID) {
-            case 1:
-                if (inv.setCurrentSlotToSameItemType(new Item("obsidian", 0, true))) {
-                    if (inv.items[inv.currentSlot].getAmount() >= 10) {
-                        inv.addAmount(new Item("obsidian", 0, true), -10);
-                        env.dimension.setDimID(1);
-                        System.out.println(lang.Messages.getString("portal_nether"));
-                    } else {
-                        System.out.println(lang.Messages.getString("portal_notenoughobsidian"));
-                    }
-
-                } else {
-                    System.out.println(lang.Messages.getString("portal_noobsidian"));
+            case 0:
+                if (env.dimension.getDimID() != 0) {
+                    System.out.println("\t" + lang.Messages.getString("portal_goback"));
+                    env.dimension.setDimID(0);
                 }
+                break;
+            case 1:
+                if(env.dimension.getDimID() != 1) {
+                    if (!env.dimension.dimVisited.contains(1)) {
+                        if (inv.setCurrentSlotToSameItemType(new Item("obsidian", 0, true))) {
+                            if (inv.items[inv.currentSlot].getAmount() >= 10) {
+                                inv.addAmount(new Item("obsidian", 0, true), -10);
+                                env.dimension.setDimID(1);
+                                System.out.println("\t" + lang.Messages.getString("portal_nether"));
+                                env.dimension.tellDimension();
+                                env.dimension.biome.tellBiome();
+                                env.dimension.dimVisited.add(1);
+                            } else {
+                                System.out.println("\t" + lang.Messages.getString("portal_notenoughobsidian"));
+                            }
+
+                        } else {
+                            System.out.println(lang.Messages.getString("\t" + "portal_noobsidian"));
+                        }
+                    } else {
+                        env.dimension.setDimID(1);
+                        System.out.println("\t" + lang.Messages.getString("portal_nether"));
+                        env.dimension.tellDimension();
+                        env.dimension.biome.tellBiome();
+                    }
+                } else {
+                    //TODO: already nether
+                }
+
                 break;
             case 2:
                 break;

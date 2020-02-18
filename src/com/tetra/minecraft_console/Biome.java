@@ -29,7 +29,7 @@ public class Biome implements java.io.Serializable {
     void tellBiome() {
         Object[] tellbiome_args = {getBiomeForDisplay()};
         String tellbiome = lang.getMessage("tellbiome", tellbiome_args);
-        System.out.println("\t" + tellbiome);
+        System.out.println("\t\t" + tellbiome);
     }
 
     void changeBiome(int dimID) {

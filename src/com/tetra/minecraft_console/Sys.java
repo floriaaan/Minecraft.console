@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+import static com.tetra.minecraft_console.Main.gameVersion;
 import static com.tetra.minecraft_console.Main.lang;
 
 public class Sys {
@@ -100,7 +101,9 @@ public class Sys {
         if (Instruction.toLowerCase().equals(lang.Messages.getString("title_newgame").toLowerCase())
                 || Instruction.toLowerCase().equals(lang.Messages.getString("title_newgame").substring(0, 1).toLowerCase())) {
             String PlayerName = AskForPlayerName();
-            return new Player(PlayerName);
+            Player P = new Player(PlayerName);
+            P.gameVersion = gameVersion;
+            return P;
         } else if (Instruction.toLowerCase().equals(lang.Messages.getString("title_load").toLowerCase())
                 || Instruction.toLowerCase().equals(lang.Messages.getString("title_load").substring(0, 1).toLowerCase())) {
             File[] saves = new File(Sys.savePath).listFiles((dir, name) -> name.endsWith(".ser"));
@@ -135,7 +138,7 @@ public class Sys {
                 System.out.println(lang.Messages.getString("title_nosave"));
             }
         } else if (Instruction.toLowerCase().equals(lang.Messages.getString("help_exit").toLowerCase())
-                || Instruction.toLowerCase().equals('x')) {
+                || Instruction.toLowerCase().equals("x")) {
             System.out.println(lang.Messages.getString("bye"));
             System.exit(0);
         }
@@ -143,5 +146,18 @@ public class Sys {
         return null;
     }
 
+    public static boolean contains(final int[] array, final int v) {
+
+        boolean result = false;
+
+        for(int i : array){
+            if(i == v){
+                result = true;
+                break;
+            }
+        }
+
+        return result;
+    }
 
 }

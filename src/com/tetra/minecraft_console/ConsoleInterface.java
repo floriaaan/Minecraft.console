@@ -59,6 +59,9 @@ public class ConsoleInterface {
                 case 10:
                     P.MakePortal(1);
                     break;
+                case 11:
+                    P.MakePortal(0);
+                    break;
                 case 20:
                     P.TellMobEncountered();
                     break;
@@ -69,7 +72,7 @@ public class ConsoleInterface {
                     break;
                 case -2:
                     System.out.println(lang.Messages.getString("help_0"));
-                    printHelp(10);
+                    printHelp(11);
                     System.out.println("\t - " + lang.Messages.getString("help_exit") + "(x)");
                     break;
                 default:
@@ -82,7 +85,7 @@ public class ConsoleInterface {
 
     static void printHelp(int nbInstruction) {
         String help;
-        int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1, 3};
+        int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1, 3, 1};
         for (int k = 1; k <= nbInstruction; k++) {
             help = "help_" + k;
             System.out.println("\t - " + lang.Messages.getString(help)
@@ -91,7 +94,7 @@ public class ConsoleInterface {
     }
 
 
-    static int Instructions(String instruction) {
+    static int Instructions(String instruction) { //TODO: Refactor with arrays
         instruction = instruction.toLowerCase();
         instruction = Normalizer
                 .normalize(instruction, Normalizer.Form.NFD)
@@ -109,6 +112,7 @@ public class ConsoleInterface {
         String help_8 = lang.Messages.getString("help_8").toLowerCase();
         String help_9 = lang.Messages.getString("help_9").toLowerCase();
         String help_10 = lang.Messages.getString("help_10").toLowerCase();
+        String help_11 = lang.Messages.getString("help_11").toLowerCase();
         String help_exit = lang.Messages.getString("help_exit").toLowerCase();
 
         if (instruction.equals(help_1) || instruction.equals("dcrire")
@@ -133,6 +137,8 @@ public class ConsoleInterface {
             return 9;
         } else if (instruction.equals(help_10) || instruction.equals(help_10.substring(0, 3).toLowerCase())) {
             return 10;
+        } else if (instruction.equals(help_11) || instruction.equals(help_11.substring(0, 3).toLowerCase())) {
+            return 11;
         } else if (instruction.equals(help_exit) || instruction.equals("x")) {
             return -1;
         } else if (instruction.equals("/help")) {
