@@ -175,7 +175,7 @@ public class Player implements java.io.Serializable {
             inv.addAmount(new Item("quartz", 0, false), QuartzFortuneAmount);
 
             Sys.forProgressBar(10);
-            System.out.println(lang.Messages.getString("\t" + "nether_mine"));
+            System.out.println("\t" + lang.Messages.getString( "nether_mine"));
         } else {
             //TODO: print other dim
         }
@@ -250,7 +250,7 @@ public class Player implements java.io.Serializable {
                             }
 
                         } else {
-                            System.out.println(lang.Messages.getString("\t" + "portal_noobsidian"));
+                            System.out.println("\t" + lang.Messages.getString("portal_noobsidian"));
                         }
                     } else {
                         env.dimension.setDimID(1);

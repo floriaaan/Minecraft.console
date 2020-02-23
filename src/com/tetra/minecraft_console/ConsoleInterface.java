@@ -84,7 +84,7 @@ public class ConsoleInterface {
 
 
     static void printHelp(int nbInstruction) {
-        int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1, 3, 1};
+        int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1, 3, 1, 1};
         for (int k = 1; k <= nbInstruction; k++) {
             System.out.println("\t - " + lang.Messages.getString("help_" + k)
                     + " (" + lang.Messages.getString("help_" + k).substring(0, indexForSubstring[k - 1]).toLowerCase() + ")");
@@ -93,7 +93,7 @@ public class ConsoleInterface {
 
 
     static int Instructions(String instruction) {
-        int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1, 3, 1};
+        int[] indexForSubstring = {1, 2, 2, 1, 3, 1, 1, 3, 1, 3, 1, 1};
         instruction = instruction.toLowerCase();
         instruction = Normalizer
                 .normalize(instruction, Normalizer.Form.NFD)
