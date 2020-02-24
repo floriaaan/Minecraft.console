@@ -6,11 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="Prepare for Nether incoming">
+    <list default="true" id="35621f67-aee3-4315-aa99-79ad130ac2cf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/ConsoleInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/ConsoleInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Languages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Languages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Language/Messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Language/Messages_en_US.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tetra/minecraft_console/langs/Messages_fr_FR.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tetra/minecraft_console/Language/Messages_fr_FR.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +157,7 @@
       <workItem from="1582484583737" duration="44000" />
       <workItem from="1582484705413" duration="96000" />
       <workItem from="1582494050364" duration="121000" />
-      <workItem from="1582495600300" duration="517000" />
+      <workItem from="1582495600300" duration="994000" />
     </task>
     <task id="LOCAL-00001" summary="Implementation of Instructions in game.">
       <created>1568280742666</created>
@@ -375,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582060171159</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Refactorizing Languages">
+      <created>1582496194914</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1582496194914</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +432,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Introducing a Regen() method." />
     <MESSAGE value="Introduced Internationalizing" />
     <MESSAGE value="Added more translations in french." />
     <MESSAGE value="Languages introduced" />
@@ -449,7 +456,8 @@
     <MESSAGE value="Nether Working" />
     <MESSAGE value="Prepare for Nether incoming" />
     <MESSAGE value="Refactorizing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactorizing" />
+    <MESSAGE value="Refactorizing Languages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactorizing Languages" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="176" width="1092" height="704" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578766793272">
@@ -468,9 +476,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1009" y="313" key="#com.intellij.ide.util.TreeClassChooserDialog/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578766788752" />
-    <state x="860" y="29" key="CommitChangelistDialog2" timestamp="1582060169964">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="516" y="0" key="CommitChangelistDialog2" timestamp="1582496193976">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="516" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1582496193976" />
     <state x="860" y="29" key="CommitChangelistDialog2/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1582060169964" />
     <state x="855" y="1080" key="CommitChangelistDialog2/339.1080.1536.832/0.0.2560.1040@339.1080.1536.832" timestamp="1582048261111" />
     <state x="1083" y="333" key="FileChooserDialogImpl" timestamp="1578766495410">
@@ -525,6 +534,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="966" y="94" width="627" height="852" key="find.popup/339.1080.1536.832/0.0.2560.1040@0.0.2560.1040" timestamp="1578766800899" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1582529360631">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1582529360631" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Minecraft_console$Main.ic" NAME="Main Coverage Results" MODIFIED="1568278809439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

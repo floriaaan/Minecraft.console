@@ -7,11 +7,11 @@ import java.util.ResourceBundle;
 
 public class Languages {
     Locale currentLocale = Locale.getDefault();
-    ResourceBundle Messages = ResourceBundle.getBundle("com/tetra/minecraft_console/langs/Messages", currentLocale);
+    ResourceBundle Messages = ResourceBundle.getBundle("com/tetra/minecraft_console/Language/Messages", currentLocale);
 
-    ResourceBundle Item = ResourceBundle.getBundle("com/tetra/minecraft_console/langs/Item", currentLocale);
-    ResourceBundle Biome = ResourceBundle.getBundle("com/tetra/minecraft_console/langs/Biome", currentLocale);
-    ResourceBundle Achievements = ResourceBundle.getBundle("com/tetra/minecraft_console/langs/Achievements", currentLocale);
+    ResourceBundle Item = ResourceBundle.getBundle("com/tetra/minecraft_console/Language/Item", currentLocale);
+    ResourceBundle Biome = ResourceBundle.getBundle("com/tetra/minecraft_console/Language/Biome", currentLocale);
+    ResourceBundle Achievements = ResourceBundle.getBundle("com/tetra/minecraft_console/Language/Achievements", currentLocale);
 
     String getMessage(String key, Object[] args) {
         MessageFormat formatter = new MessageFormat("");
