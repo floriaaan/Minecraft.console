@@ -7,6 +7,11 @@ import static com.tetra.minecraft_console.Main.lang;
 
 public class Dimension implements java.io.Serializable {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = -5456419763409925876L;
+
     public Dimension() {
         setDimID(0);
     }
@@ -15,11 +20,9 @@ public class Dimension implements java.io.Serializable {
     public List<Integer> dimVisited = new ArrayList<Integer>();
 
     String dimName;
-    String[] dimNameList = {"overworld", "nether", "aether", "moon", "end"};
+    String[] dimNameList = { "overworld", "nether", "aether", "moon", "end" };
 
     Biome biome = new Biome(this.getDimID());
-
-
 
     public int getDimID() {
         return dimID;
@@ -44,8 +47,10 @@ public class Dimension implements java.io.Serializable {
     }
 
     void tellDimension() {
-        Object[] telldim_args = {getDimForDisplay()};
-        String telldim = lang.getMessage("telldim", telldim_args);
-        System.out.println("\t\t" + telldim);
+        if (getDimID() != 0) {
+            Object[] telldim_args = { getDimForDisplay() };
+            String telldim = lang.getMessage("telldim", telldim_args);
+            System.out.println("\t\t" + telldim);
+        }
     }
 }

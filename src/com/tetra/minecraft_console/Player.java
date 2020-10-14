@@ -86,6 +86,7 @@ public class Player implements java.io.Serializable {
         System.out.println(lang.Messages.getString("describe_inv"));
         Scanner I = new Scanner(System.in);
         String choice = I.nextLine();
+        I.close();
 
         if (choice.toLowerCase().equals(lang.Messages.getString("yes").toLowerCase())) {
 

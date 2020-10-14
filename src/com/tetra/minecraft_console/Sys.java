@@ -56,11 +56,12 @@ public class Sys {
         System.out.println(lang.Messages.getString("save"));
         Scanner Input = new Scanner(System.in);
         String Instruction = Input.nextLine();
+        Input.close();
         if (Instruction.toLowerCase().equals(lang.Messages.getString("yes").toLowerCase())) {
             try {
 
                 new File(Sys.savePath).mkdirs();
-                File playerFile = new File(Sys.savePath + P.Name + ".ser");
+                File playerFile = new File(Sys.savePath + P.Name + ".data");
                 playerFile.createNewFile(); // if file already exists will do nothing
                 FileOutputStream playerSaveFile = new FileOutputStream(playerFile);
                 ObjectOutputStream out = new ObjectOutputStream(playerSaveFile);
@@ -80,6 +81,7 @@ public class Sys {
         System.out.println(lang.Messages.getString("ask_for_playername"));
         Scanner userName = new Scanner(System.in);
         String PlayerName = userName.nextLine();
+        userName.close();
 
         Object[] playername_set_args = {PlayerName};
         String playername_set = lang.getMessage("playername_set", playername_set_args);
@@ -98,6 +100,7 @@ public class Sys {
 
         Scanner Input = new Scanner(System.in);
         String Instruction = Input.nextLine();
+        Input.close();
         if (Instruction.toLowerCase().equals(lang.Messages.getString("title_newgame").toLowerCase())
                 || Instruction.toLowerCase().equals(lang.Messages.getString("title_newgame").substring(0, 1).toLowerCase())) {
             String PlayerName = AskForPlayerName();
@@ -106,7 +109,7 @@ public class Sys {
             return P;
         } else if (Instruction.toLowerCase().equals(lang.Messages.getString("title_load").toLowerCase())
                 || Instruction.toLowerCase().equals(lang.Messages.getString("title_load").substring(0, 1).toLowerCase())) {
-            File[] saves = new File(Sys.savePath).listFiles((dir, name) -> name.endsWith(".ser"));
+            File[] saves = new File(Sys.savePath).listFiles((dir, name) -> name.endsWith(".data"));
             if (saves.length > 0) {
                 for (int k = 0; k < saves.length; k++) {
                     int lastPeriodPos = saves[k].getName().lastIndexOf('.');

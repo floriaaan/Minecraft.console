@@ -56,6 +56,7 @@ public class Monster {
             System.out.println(lang.Messages.getString("hit_the_player_dead"));
             Scanner I = new Scanner(System.in);
             String respawnChoice = I.nextLine();
+            I.close();
             if (respawnChoice.equals("Yes")) {
                 P = new Player(P.Name);
                 System.out.println(lang.Messages.getString("hit_the_player_respawn_yes"));
