@@ -15,7 +15,6 @@ public class ConsoleInterface {
 
             Scanner I = new Scanner(System.in);
             PlayerWantsTo = I.nextLine();
-            I.close();
             int Inst = Instructions(PlayerWantsTo);
             switch (Inst) {
                 case 1:

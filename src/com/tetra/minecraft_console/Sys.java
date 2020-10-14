@@ -81,8 +81,7 @@ public class Sys {
         System.out.println(lang.Messages.getString("ask_for_playername"));
         Scanner userName = new Scanner(System.in);
         String PlayerName = userName.nextLine();
-        userName.close();
-
+        
         Object[] playername_set_args = {PlayerName};
         String playername_set = lang.getMessage("playername_set", playername_set_args);
         System.out.println(playername_set);
@@ -100,7 +99,6 @@ public class Sys {
 
         Scanner Input = new Scanner(System.in);
         String Instruction = Input.nextLine();
-        Input.close();
         if (Instruction.toLowerCase().equals(lang.Messages.getString("title_newgame").toLowerCase())
                 || Instruction.toLowerCase().equals(lang.Messages.getString("title_newgame").substring(0, 1).toLowerCase())) {
             String PlayerName = AskForPlayerName();
